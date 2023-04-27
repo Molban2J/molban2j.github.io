@@ -68,7 +68,7 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
 ## DB 명세서
 
-![db명세서 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)
+![db명세서 image](images/product2.png)
 
 ---
 <br>

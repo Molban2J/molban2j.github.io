@@ -20,7 +20,7 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 >의류회사마다 같은 사이즈 표기라도 실제 사이즈가 다른 경우가 많고
 사람들마다 선호하는 사이즈가 다르기 때문에 온라인에서 의류를 
 선택하기에 어려움이 있다.<br>
-![의류 사이즈 비교 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\sizecompareEx.png)
+![사이즈 비교이미지](images/sizecompareEx.png)
 <br>
 이러한 문제점을 쉽게 해결하고자
 의류 사이즈 추천 페이지를 주제로 선정했다.
@@ -34,8 +34,11 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
   * MySQL
   * Illustrator
 
+  <br>
+
 **개발 스케줄**
 <br>
+
 |날짜|일정|
 |:--:|:--|
 |2023.03.15 ~ 2023.03.17|각자 맡은 페이지 프레임 및 레이아웃 제작,<br> 데이터 베이스 구축 및 연동|
@@ -63,20 +66,19 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
 ## DB 명세서
 
-![db명세서 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)
-
+![db명세서 이미지](images/product2.png)
 ---
 <br>
 
 ## 페이지 흐름도
 <br>
 
-![페이지 흐름도1 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png) <br>
+![페이지 흐름도1 이미지](images/%EB%8C%80%EC%A7%80%201.png)
+<br>
 
-![페이지 흐름도2 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png) <br>
+![페이지 흐름도2 이미지](images/%EB%8C%80%EC%A7%80%202.png)<br>
 
-![페이지 흐름도3 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)
-
+![페이지 흐름도3 이미지](images/%EB%8C%80%EC%A7%80%203.png)
 <br>
 예시 2번으로 결정
 
@@ -85,24 +87,28 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
 ## Concept
 
-![concept 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)
-
+![concept 이미지](images/%EB%8C%80%EC%A7%80%204.png)
 ---
 
 <br>
 
+---
+<br>
+
 ## 페이지 상세
+![login page 이미지](images/%EB%8C%80%EC%A7%80%205.png)
+<br>
 
-![login page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png) <br>
+![sign in page 이미지](images/%EB%8C%80%EC%A7%80%206.png)
+<br>
 
-![sign in page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png) <br>
+![brand page 이미지](images/%EB%8C%80%EC%A7%80%207.png)
+<br>
 
-![brand page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)<br>
+![item page 이미지](images/%EB%8C%80%EC%A7%80%208.png)
+<br>
 
-![item page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)<br>
-
-![item detail page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)<br>
-
+![item detail page 이미지](images/%EB%8C%80%EC%A7%80%209.png)
 <br>
 
 ---
@@ -110,14 +116,14 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
 ## 구현 및 기능설명
 
-![login page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png) <br>
+![login page 이미지](images/%EB%8C%80%EC%A7%80%2010.png)<br>
 
-![관리자 page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png) <br>
+![관리자 page 이미지](images/%EB%8C%80%EC%A7%80%2018.png)<br>
 
-![sign in page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png) <br>
+![sign in page 이미지](images/%EB%8C%80%EC%A7%80%2011.png)<br>
 
-![brand page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)<br>
+![brand page 이미지](images/%EB%8C%80%EC%A7%80%2012.png)<br>
 
-![item page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)<br>
+![item page 이미지](images/%EB%8C%80%EC%A7%80%2017.png)<br>
 
-![item detail page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)<br>
+![item detail page 이미지](images/%EB%8C%80%EC%A7%80%2019.png)<br>

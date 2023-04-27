@@ -71,30 +71,18 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
 ## DB 명세서
 
-<<<<<<< HEAD
 ![db명세서 이미지](images/product2.png)
-=======
-![db명세서 image](images/product2.png)
 
->>>>>>> 8eab9e4028843a64a9849582ba8104ae533ea7bc
 ---
 <br>
 
 ## 페이지 흐름도
 <br>
 
-<<<<<<< HEAD
 ![페이지 흐름도1 이미지](images/%EB%8C%80%EC%A7%80%201.png)
 <br>
 
 ![페이지 흐름도2 이미지](images/%EB%8C%80%EC%A7%80%202.png)<br>
-=======
-![페이지 흐름도1 image](https://github.com/Molban2J/molban2j.github.io/blob/6d9e5f726d74ad7ca768da806f27950e2d023b92/_posts/images/%EB%8C%80%EC%A7%80%201.png) <br>
-
-![페이지 흐름도2 image](_posts/images/대지 1.png) <br>
-
-![페이지 흐름도3 image]([C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png](https://github.com/Molban2J/molban2j.github.io/blob/master/_posts/images/%EB%8C%80%EC%A7%80%203.png))
->>>>>>> 8eab9e4028843a64a9849582ba8104ae533ea7bc
 
 ![페이지 흐름도3 이미지](images/%EB%8C%80%EC%A7%80%203.png)
 <br>
@@ -144,8 +132,5 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
 ![item page 이미지](images/%EB%8C%80%EC%A7%80%2017.png)<br>
 
-<<<<<<< HEAD
 ![item detail page 이미지](images/%EB%8C%80%EC%A7%80%2019.png)<br>
-=======
-![item detail page 이미지](C:\Users\user\gitblog\molban2j.github.io\_posts\images\product2.png)<br>
->>>>>>> 8eab9e4028843a64a9849582ba8104ae533ea7bc
+

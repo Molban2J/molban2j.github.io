@@ -9,7 +9,7 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
 **팀원**: **임종민(팀장,본인)** , 이준환, 오현서, 김성준, 이정효<br>
 
-**깃허브 repository** : [Github](https://github.com/Molban2J/ClothSizeRecommandProject.git "github")
+**깃허브 repository** : [github.com/Molban2J/ClothSizeRecommandProject.git](https://github.com/Molban2J/ClothSizeRecommandProject.git "github")
 
 **프로젝트 진행 기간**: 2023.03.1 5~ 2023.03.22<br>
 

@@ -25,7 +25,7 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 >의류회사마다 같은 사이즈 표기라도 실제 사이즈가 다른 경우가 많고
 사람들마다 선호하는 사이즈가 다르기 때문에 온라인에서 의류를 
 선택하기에 어려움이 있다.<br>
-![사이즈 비교이미지](images/sizecompareEx.png)
+![사이즈 비교이미지](https://github.com/Molban2J/molban2j.github.io/blob/aedff0098b3647ca25154d0f65fa110c4f5e9c72/_posts/images/sizecompareEx.png)
 <br>
 이러한 문제점을 쉽게 해결하고자
 의류 사이즈 추천 페이지를 주제로 선정했다.
@@ -71,7 +71,7 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
 ## DB 명세서
 
-![db명세서 이미지](images/product2.png)
+![db명세서 이미지](https://github.com/Molban2J/molban2j.github.io/blob/aedff0098b3647ca25154d0f65fa110c4f5e9c72/_posts/images/product2.png)
 
 ---
 <br>

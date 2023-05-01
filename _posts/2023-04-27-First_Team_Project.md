@@ -168,12 +168,16 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
  * ex
 
-  // 의류 상세 페이지창 :
+'''java
+// 의류 상세 페이지창 :
 	public Table getProfile(String id) {
 		System.out.println("getProfile(String id)");
 		Table profile=sql(7,"select", "name","sex","height","shoulder","chest","waist","leg", "from profile where id='"+id+"';");
 		return profile;
 	}
+	<br>
+'''
+
   ##### * 위 코드를 보면 sql문을 만드는 매서드를 또 호출해서 데이터를 불러오고 있다.
     
   

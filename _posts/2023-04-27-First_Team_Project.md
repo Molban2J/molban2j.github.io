@@ -170,16 +170,16 @@ ex)
 //의류 상세페이지 창
 
 '''java
-	public Table getProfile(String id) {
-		System.out.println("getProfile(String id)");
-		Table profile=sql(7,"select", "name","sex","height","shoulder","chest","waist","leg", "from profile where id='"+id+"';");
-		return profile;
-	}
+public Table getProfile(String id) {
+	System.out.println("getProfile(String id)");
+	Table profile=sql(7,"select", "name","sex","height","shoulder","chest","waist","leg", "from profile where id='"+id+"';");
+	return profile;
+}
 '''
 
-  ##### * 위 코드를 보면 sql문을 만드는 매서드를 또 호출해서 데이터를 불러오고 있다.
-    
-  
+##### * 위 코드를 보면 sql문을 만드는 매서드를 또 호출해서 데이터를 불러오고 있다.
+
+<br>
 
 이를 보고 프로젝트를 진행함에 있어서 작업 룰과 패턴을 정하는 것이 굉장히 중요하다는 것을 느꼈고, 이를 좀더 집요하게, 강하게 주장을 했어야하는 후회가 남는다.
 

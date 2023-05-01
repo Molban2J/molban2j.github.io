@@ -166,14 +166,17 @@ java와 gui를 이용한 첫번째 팀 프로젝트입니다.<br>
 
 그러면서 일정에 차질이 생기고 점점 일이 몰리자 코드를 병합하는데 있어서 문제가 많았는데 그 부분이 제일 아쉽다. 이 프로 젝트의 코드를 살펴보면 굉장히 이상한 방식으로 짜여져 있는데, 병합을 담당했던 사람이 자신의 방식대로 짜다보니 그렇게 된것이었다. 
 
- * ex
+ex)
+//의류 상세페이지 창
 
-  // 의류 상세 페이지창 :
+'''java
 	public Table getProfile(String id) {
 		System.out.println("getProfile(String id)");
 		Table profile=sql(7,"select", "name","sex","height","shoulder","chest","waist","leg", "from profile where id='"+id+"';");
 		return profile;
 	}
+'''
+
   ##### * 위 코드를 보면 sql문을 만드는 매서드를 또 호출해서 데이터를 불러오고 있다.
     
   

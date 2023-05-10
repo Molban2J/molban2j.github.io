@@ -15,7 +15,7 @@ title:  "쇼핑 페이지 예제 클론코딩"
 
 **메인페이지(main.jsp)**
 
-![메인 페이지]({{ site.baseurl }}/images/20230510_145840.png)
+![메인 페이지]({{ site.baseurl }}/images/20230510_150448.png)
 
 <br>
 
@@ -128,7 +128,7 @@ title:  "쇼핑 페이지 예제 클론코딩"
 implements HandlerInterceptor
 ```
 
-    관리자 창에서 관리자가 아니거나 로그인 상태가 아닐경우 접속을 혀용하지 않고 메인페이지로 돌려보내기 위해 Interceptor 사용
+관리자 창에서 관리자가 아니거나 로그인 상태가 아닐경우 접속을 혀용하지 않고 메인페이지로 돌려보내기 위해 Interceptor 사용
 
 - AdimInterceptor.java
 

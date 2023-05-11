@@ -523,6 +523,8 @@ service test 패키지를 만들어 테스트를 한번 더 해줍니다
 bean객체를 제데로 인식하지 못하는 에러가 발생
 
 AuthorService.java에 service라는 걸 인지시키기 위해 어노테이션 추가
+<br>
+(추가) 그래도 똑같이 bean객체를 찾지 못하는 에러가 발생. AuthorServiceImpl.java에도 똑같이 @Service 어노테이션을 붙여주도록 하자
 
 ![이미지]({{ site.baseurl }}/images/20230511_121529.png)
 
@@ -548,48 +550,47 @@ AuthorService.java에 service라는 걸 인지시키기 위해 어노테이션 �
 
 ```html
 <div class="admin_content_wrap">
-					<div class="admin_content_subject">
-					<span>작가 등록</span>
-						<div class="admin_content_main">
-						<form action="/admin/authorEnroll.do" method="post">
-							<div class="form_section">
-								<div class="form_section_title">
-									<label>작가 이름</label>
-								</div>
-								<div class="form_section_content">
-									<input name="authorName">
-								</div>
-							</div>
-							<div class="form_section">
-                    			<div class="form_section_title">
-                    				<label>소속 국가</label>
-                    			</div>
-                    			<div class="form_section_content">
-                    				<select name="nationId">
-                    					<option value="none" selected>=== 선택 ===</option>
-                    					<option value="01">국내</option>
-                    					<option value="02">국외</option>
-                    				</select>
-                    			</div>
-                    		</div>
-                    		<div class="form_section">
-                    			<div class="form_section_title">
-                    				<label>작가소개</label>
-                    			</div>
-                    			<div class="form_section_content">
-                    				<input name="authorIntro" type="text">
-                    			</div>
-                    		</div>
-                   		</form>
-                   			<div class="btn_section">
-                   				<button id="cancelBtn" class="btn">취 소</button>
-	                    		<button id="enrollBtn" class="btn enroll_btn">등 록</button>
-	                    	</div> 
-						</form>
+	<div class="admin_content_subject">
+	  <span>작가 등록</span>
+			<div class="admin_content_main">
+				< action="/admin/authorEnroll.do" method="post">
+					<div class="form_section">
+						<div class="form_section_title">
+							<label>작가 이름</label>
 						</div>
-						
+						<div class="form_section_content">
+							<input name="authorName">
+						</div>
 					</div>
-				</div>
+					<div class="form_section">
+            <div class="form_section_title">
+              <label>소속 국가</label>
+            </div>
+              <div class="form_section_content">
+                <select name="nationId">
+                  <option value="none" selected>=== 선택 ===</option>
+                  <option value="01">국내</option>
+                  <option value="02">국외</option>
+                </select>
+              </div>
+            </div>
+            <div class="form_section">
+              <div class="form_section_title">
+                <label>작가소개</label>
+              </div>
+              <div class="form_section_content">
+                <input name="authorIntro" type="text">
+              </div>
+            </div>
+          <div class="btn_section">
+          <button id="cancelBtn" class="btn">취 소</button>
+	        <button id="enrollBtn" class="btn enroll_btn">등 록</button>
+	      </div> 
+			</form>
+		</div>
+						
+	</div>
+</div>
 ```
 
 <br>
@@ -633,8 +634,176 @@ $(document).ready(function(){
 ![이미지]({{ site.baseurl }}/images/20230511_131522.png)
 
 ---
+<br>
+<br>
+<br>
+5/11 오후
+
+<br>
+<br>
+<br>
+authorManage.jsp의 스크립트 부분은 작가 등록 정보가 노출이 될수있어 공격받을 수 있다고 한다. 그래서 jstl을 이용해 다음과 같이 고쳐줬다
+
+```html
+<script>
+$(document).ready(function(){
+	let result = '<c:out value="${enroll_result}"/>'';
+	checkResult(result);
+	
+	function checkResult(result){
+		if(result == ''){
+			return;
+		}
+		alert("작가 '${enroll_result}'을 등록하였습니다.");
+	}
+});
+</script>
+```
+
+<br>
+<br>
+<br>
+
+adminEnroll.jsp \<from> 부분 css 적용
+
+<br>
+adminEnroll.css
+
+```css
+/* 관리자 컨텐츠 메인 영역 */
+.form_section{
+    width: 95%;
+    margin-left: 2%;
+    margin-top: 20px;
+    border: 1px solid #dbdde2;
+    background-color: #efefef;    
+}
+.form_section_title{
+    padding: 20px 35px;    
+}
+.form_section_title label{
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+}
+.form_section_content{
+    padding: 20px 35px;
+    border-top: 1px solid #dbdde2;    
+}
+.form_section_content input{
+    width: 98%;
+    height: 25px;
+    font-size: 20px;
+    padding: 5px 1%;
+}
+.form_section_content select{
+    width: 98%;
+    height: 35px;
+    font-size: 20px;
+    text-align-last: center;
+}
+ 
+/* 입력란 공란 경고 태그 */
+.form_section_content span{    
+    display: none;
+    padding-top: 10px;
+    text-align: center;
+    color: #e05757;
+    font-weight: 300;    
+}
+
+/* 버튼 영역 */
+.btn_section{
+    text-align: center;
+    margin: 80px 0;
+}
+.btn{
+    min-width: 180px;
+    padding: 4px 30px;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 40px;
+}
+.enroll_btn{
+    background-color: #dbdde2;
+    margin-left:15px;
+}
+
+```
+
+<br>
+<br>
+<br>
+현재까지 만든것
+
+![이미지]({{ site.baseurl }}/images/20230511_153828.png)
+
+<br>
+그리고 등록버튼을 누를때 입력폼 유효성 검사를 위해 스크립트를 좀 변경해줍니다.
 
 
+```html
+<script>
+		/*등록 버튼 */
+		$("#enrollBtn").click(function() {
+			/*검사 통과 유무 변수*/
+			let nameCheck = false; // 작가 이름 
+			let nationCheck = false; // 소속 국가 
+			let introCheck = false; // 작가 소개
+
+			/*입력값 변수*/
+			let authorName = $('input[name=authorName]').val();
+			let nationId = $('select[name=nationId]').val();
+			let authorIntro = $('input[name=authorIntro]').val();
+
+			/*공란 경고 span태그*/
+			let wAuthorName = $('#warn_authorName');
+			let wNationId = $('#warn_nationId');
+			let wAuthorIntro = $('#warn_authorIntro');
+
+			/*작가 이름 공란 체크*/
+			if (authorName === '') {
+				wAuthorName.css('display', 'block');
+				nameCheck = false;
+			} else {
+				wAuthorName.css('display', 'none');
+				nameCheck = "true";
+			}
+
+			/*작가 국적 공란 체크*/
+			if (nationId === 'none') {
+				wNationId.css('display', 'block');
+				nationCheck = false;
+			} else {
+				wNationId.css('display', 'none');
+				nationCheck = "true";
+			}
+
+			/*작가 소개 공란 체크*/
+			if (authorIntro === '') {
+				wAuthorIntro.css('display', 'block');
+				introCheck = false;
+			} else {
+				wAuthorIntro.css('display', 'none');
+				introCheck = "true";
+			}
+
+			/*최종 검사*/
+			if (nameCheck && nationCheck && introCheck) {
+				$("#enrollForm").submit();
+			} else {
+				return;
+			}
+
+		});
+
+		/*취소 버튼*/
+		$("#cancelBtn").click(function() {
+			$("#enrollForm")[0].reset();
+			// 			location.href="/admin/authorManage"
+		});
+	</script>
+```
 
 
 

@@ -170,7 +170,7 @@ AuthorMapper.xml과 AuthorService.java, AuthorServiceImpl.java에도 코드를 �
 	</select>
 ```
 
-#### <p style="text-align: center">AuthorMapper.xml 코드</h5>
+#### <p style="text-align: center">AuthorMapper.xml 코드</p>
 
 위 코드는 잘 이해가 가지 않으니 하나씩 뜯어서 이해해보려 한다.
 
@@ -277,7 +277,7 @@ order by 명령문을 사용해도 똑같은 결과를 얻지만, order by의 �
 <![CDATA[]]]>
 ```
 
-<h5>이 태그는 부등호 등 수학기호를 쓰기 위해서 사용한다.</h5>
+<p style="text-align:center; font-size:0.8em;">이 태그는 부등호 등 수학기호를 쓰기 위해서 사용한다.</p>
 
 <br>
 <br>
@@ -287,7 +287,7 @@ order by 명령문을 사용해도 똑같은 결과를 얻지만, order by의 �
 	authorName like '%'||#{keyword}||'%' and
 </if>
 ```
-<h5>keyword가 존재한다면 keyword 검색</h5>
+<p style="text-align:center; font-size:0.8em;">keyword가 존재한다면 keyword 검색</p>
 
 
 <br>
@@ -303,7 +303,7 @@ mapper도 만들었으니 JUnitTest 진행
 
 ![image]({{ site.baseurl }}/images/20230512_144058.png)
 
-<h5>test가 잘 작동한다.</h5>
+<p style="text-align:center; font-size:0.8em;">test가 잘 작동한다.</p>
 
 <br>
 <br>
@@ -312,7 +312,7 @@ mapper도 만들었으니 JUnitTest 진행
 
 ![image]({{ site.baseurl }}/images/20230512_144602.png)
 
-<h5>어째서인지 keyword로 검색한 결과로 나오는게 아니라 이전과 똑같이 나온다.</h5>
+<p style="text-align:center; font-size:0.8em;">어째서인지 keyword로 검색한 결과로 나오는게 아니라 이전과 똑같이 나온다.</p>
 
 <br>
 
@@ -323,7 +323,7 @@ Criteria cri = new Criteria(3,10);
 List<AuthorVO> list = mapper.authorList(cri);
 cri.setKeyword("홍준");
 ```
-<h5>setKeyword의 순서가 잘못 됐다.</h5>
+<p style="text-align:center; font-size:0.8em;">setKeyword의 순서가 잘못 됐다.</p>
 
 
 ```java
@@ -332,24 +332,24 @@ cri.setKeyword("홍준");
 List<AuthorVO> list = mapper.authorList(cri);
 ```
 
-<h5>변경 후</h5>
+<p style="text-align:center; font-size:0.8em;">변경 후</p>
 
 <br>
 
 ![image]({{ site.baseurl }}/images/20230512_145455.png)
 
-<h5>잘 작동되는 모습</h5>
+<p style="text-align:center; font-size:0.8em;">잘 작동되는 모습</p>
 
 ---
 ### 3. Service 생성
 
 ![image]({{ site.baseurl }}/images/20230512_145811.png)
 
-<h5>service 생성</h5>
+<p style="text-align:center; font-size:0.8em;">service 생성</p>
 
 ![image]({{ site.baseurl }}/images/20230512_145919.png)
 
-<h5>serviceImpl 생성</h5>
+<p style="text-align:center; font-size:0.8em;">serviceImpl 생성</p>
 
 <br>
 <br>
@@ -363,7 +363,7 @@ List<AuthorVO> list = mapper.authorList(cri);
         logger.info("작가 관리 페이지 접속");
     }   
 ```
-<h5>기존의 controller</h5>
+<p style="text-align:center; font-size:0.8em;">기존의 controller</p>
 
 ```java
   /* 작가 관리 페이지 접속 */
@@ -376,7 +376,7 @@ List<AuthorVO> list = mapper.authorList(cri);
     }  
 ```
 
-<h5>변경 후</h5>
+<p style="text-align:center; font-size:0.8em;">변경 후</p>
 
 
 > 하지만 여기서 의문점이 생겼다.
@@ -429,7 +429,7 @@ public class AuthorVO {
 		
 }
 ```
-<h5>변경 후<br>lombok의 data어노테이션이 있어도 getter/setter를 정의해주면 나중에 따로 정의한 getter/setter를 기준으로 데이터를 매핑한다.</h5>
+<p style="text-align:center; font-size:0.8em;">변경 후<br>lombok의 data어노테이션이 있어도 getter/setter를 정의해주면 나중에 따로 정의한 getter/setter를 기준으로 데이터를 매핑한다.</p>
 
 
 <br>
@@ -465,17 +465,17 @@ public class AuthorVO {
 			</table>
 		</div>
 ```
-<h5>authorManage.jsp</h5>
+<p style="text-align:center; font-size:0.8em;">authorManage.jsp</p>
 
 
 ![image]({{ site.baseurl }}/images/20230512_154037.png)
 
-<h5>실행 결과 <br> 매우 이상하긴한데 나오긴 나온다. 일단 css적용해보기로</h5>
+<p style="text-align:center; font-size:0.8em;">실행 결과 <br> 매우 이상하긴한데 나오긴 나온다. 일단 css적용해보기로</p>
 
 
 ![image]({{ site.baseurl }}/images/20230512_154605.png)
 
-<h5>쨘</h5>
+<p style="text-align:center; font-size:0.8em;">쨘</p>
 
 ---
 
@@ -536,7 +536,7 @@ public class PageVO {
 }
 
 ```
- <h5 style="text-align:center">PageVO</h5>
+ <h5 style="text-align:center">PageVO</p>
 
 <br>
 
@@ -558,7 +558,7 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 //전체 데이터 개수
 	public int authorTotal(Criteria cri);
 ```
-<h5>AuthorMapper.java에 추가</h5>
+<p style="text-align:center; font-size:0.8em;">AuthorMapper.java에 추가</p>
 
 ```xml
 <select id="authorTotal" resultType="int">
@@ -568,11 +568,11 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 		</if>
 	</select>
 ```
-<h5>AuthorMapper.xml에 추가</h5>
+<p style="text-align:center; font-size:0.8em;">AuthorMapper.xml에 추가</p>
 
 ![image]({{ site.baseurl }}/images/20230512_162114.png)
 
-<h5>JUnitTest성공</h5>
+<p style="text-align:center; font-size:0.8em;">JUnitTest성공</p>
 
 +AuthorService.java, AuthorServiceImpl.java에도 코드 추가
 <br>
@@ -586,7 +586,7 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
         
         model.addAttribute("pageMaker", pageMaker);
 ```
-<h5>AdminController에 authorManage매퍼에 삽입</h5>
+<p style="text-align:center; font-size:0.8em;">AdminController에 authorManage매퍼에 삽입</p>
 
 ---
 
@@ -618,7 +618,7 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 
 				</div>
 ```
-<h5>authorMange.jsp에 페이지 버튼 삽입</h5>
+<p style="text-align:center; font-size:0.8em;">authorMange.jsp에 페이지 버튼 삽입</p>
 
 \<li class='pageMaker_btn ${pageMaker.cri.pageNum == num ? "active":""}'> 이 코드는 현재 페이지면 버튼을 비활성화 하고 아니라면 활성화하여 이동할수 있게 하는 코드
 
@@ -630,7 +630,7 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
 	</form>
 ```
-<h5>버튼을 누르면 페이지 값들이 넘어가도록 폼태그 작성</h5>
+<p style="text-align:center; font-size:0.8em;">버튼을 누르면 페이지 값들이 넘어가도록 폼태그 작성</p>
 
 그리고 버튼을 눌렀을때 submit이 되도록 스크립트문 작성
 
@@ -646,12 +646,12 @@ $(".pageMaker_btn a").on("click", function(e){
     
     moveForm.submit();
 ```
-<h5>script문</h5>
+<p style="text-align:center; font-size:0.8em;">script문</p>
 
 
 ![image]({{ site.baseurl }}/images/20230512_164043.png)
 
-<h5>실행했을때 모습. css적용하기 전 모습이다.</h5>
+<p style="text-align:center; font-size:0.8em;">실행했을때 모습. css적용하기 전 모습이다.</p>
 
 <br>
 그리고 페이지 버튼을 누르면 주소가 /admin/pageNum이렇게 떠서 매핑이 되질 않는다. 이 오류는 차차 해결해 보는거로..

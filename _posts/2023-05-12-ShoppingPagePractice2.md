@@ -594,7 +594,8 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 
 
 ```html
-/<!-- 페이지 이동 인터페이스 영역 -->
+
+<!-- 페이지 이동 인터페이스 영역 -->
 				<div class="pageMaker_wrap">
 
 					<ul class="pageMaker">
@@ -617,7 +618,9 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 					</ul>
 
 				</div>
+        
 ```
+
 <p style="text-align:center; font-size:0.8em;">authorMange.jsp에 페이지 버튼 삽입</p>
 
 \<li class='pageMaker_btn ${pageMaker.cri.pageNum == num ? "active":""}'> 이 코드는 현재 페이지면 버튼을 비활성화 하고 아니라면 활성화하여 이동할수 있게 하는 코드
@@ -630,9 +633,11 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
 	</form>
 ```
+
 <p style="text-align:center; font-size:0.8em;">버튼을 누르면 페이지 값들이 넘어가도록 폼태그 작성</p>
 
 그리고 버튼을 눌렀을때 submit이 되도록 스크립트문 작성
+
 
 ```javascript
 let moveForm = $('#moveForm');
@@ -646,14 +651,18 @@ $(".pageMaker_btn a").on("click", function(e){
     
     moveForm.submit();
 ```
+
 <p style="text-align:center; font-size:0.8em;">script문</p>
+
 
 
 ![image]({{ site.baseurl }}/images/20230512_164043.png)
 
+
 <p style="text-align:center; font-size:0.8em;">실행했을때 모습. css적용하기 전 모습이다.</p>
 
 <br>
+
 그리고 페이지 버튼을 누르면 주소가 /admin/pageNum이렇게 떠서 매핑이 되질 않는다. 이 오류는 차차 해결해 보는거로..
 
 

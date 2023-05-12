@@ -536,7 +536,8 @@ public class PageVO {
 }
 
 ```
- <h5 style="text-align:center">PageVO</p>
+
+ <p style="text-align:center; font-size:0.8em;">PageVO</p>
 
 <br>
 
@@ -618,7 +619,7 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 					</ul>
 
 				</div>
-        
+
 ```
 
 <p style="text-align:center; font-size:0.8em;">authorMange.jsp에 페이지 버튼 삽입</p>

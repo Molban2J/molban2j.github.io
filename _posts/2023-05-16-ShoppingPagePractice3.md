@@ -12,7 +12,7 @@ title:  "쇼핑 페이지 예제 클론코딩3"
 	public AuthorVO authorDetail(int authorId);
 ```
 
-#### <p style="text-align: center">AuthorMapper.java 코드, xml과 service에도 추가해주도록 하자</p>
+<p style="text-align: center">AuthorMapper.java 코드, xml과 service에도 추가해주도록 하자</p>
 
 
 
@@ -22,7 +22,7 @@ title:  "쇼핑 페이지 예제 클론코딩3"
 	</select>
 ```
 
-#### <p style="text-align: center">AuthorMapper.xml 코드</p>
+<p style="text-align: center">AuthorMapper.xml 코드</p>
 
 ![image]({{ site.baseurl }}/images/20230516_155532.png)
 

@@ -26,7 +26,7 @@ title:  "쇼핑 페이지 예제 클론코딩3"
 
 ![image]({{ site.baseurl }}/images/20230516_155532.png)
 
-##### <p style="text-align:center;">test 성공<p>
+<p style="text-align:center; font-size:0.8em;">test 성공<p>
 
 
  ```java
@@ -42,7 +42,7 @@ title:  "쇼핑 페이지 예제 클론코딩3"
     }
 ```
 
-##### <p style="text-align:center;">mapper 작성<p>
+<p style="text-align:center; font-size:0.8em;">mapper 작성<p>
 
 <br>
 
@@ -72,7 +72,7 @@ authorManage.jsp에서 authorDetail.jsp로 넘어갈수 있도록 \<a> 태그를
 		
 ```
 
-##### <p style="text-align:center;">script 작성<p>
+<p style="text-align:center; font-size:0.8em;">script 작성<p>
 
 > 여기 예제에서는 값을 넘기기 위해서 일일히 스크립트문을 작성해준다.<br> 하지만 오히려 나는 
 ```html
@@ -87,7 +87,7 @@ authorManage.jsp에서 authorDetail.jsp로 넘어갈수 있도록 \<a> 태그를
 
 ![image]({{ site.baseurl }}/images/20230516_161211.png)
 
-##### <p style="text-align:center;">\<a>태그 작성까지 완성<p>
+<p style="text-align:center; font-size:0.8em;">\<a>태그 작성까지 완성<p>
 
 
 <br>
@@ -98,7 +98,7 @@ authorManage.jsp에서 authorDetail.jsp로 넘어갈수 있도록 \<a> 태그를
 
 ![image]({{ site.baseurl }}/images/20230516_165338.png)
 
-##### <p style="text-align:center;">\<a>jsp, css 생성<p>
+<p style="text-align:center; font-size:0.8em;">\<a>jsp, css 생성<p>
 
 그리고 작가 목록 버튼과 수정 버튼이 작동할 수 있도록 스크립트 작성
 
@@ -131,12 +131,12 @@ $("#modifyBtn").on("click", function(e){
 </script>
 ```
 
-##### <p style="text-align:center;">script 작성<p>
+<p style="text-align:center; font-size:0.8em;">script 작성<p>
 
 
 ![image]({{ site.baseurl }}/images/20230516_171404.png)
 
-##### <p style="text-align:center;">작가 상세페이지 모습<p>
+<p style="text-align:center; font-size:0.8em;">작가 상세페이지 모습<p>
 
 
 > 왜 작가 상세페이지 진입하는데 criteria 정보를 매개변수로 받는지 몰랐는데 실행해보니 깨달았다. 상세 페이지에서 작가 목록창 버튼을 누르면 기존 criteria 정보를 갖고 가기때문에 상세페이지 들어가기 전 페이지 그대로 목록창에 진입하게 된다.

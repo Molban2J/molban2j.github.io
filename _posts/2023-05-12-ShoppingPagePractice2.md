@@ -666,15 +666,141 @@ $(".pageMaker_btn a").on("click", function(e){
 
 그리고 페이지 버튼을 누르면 주소가 /admin/pageNum이렇게 떠서 매핑이 되질 않는다. 이 오류는 차차 해결해 보는거로..
 
+---
+
+### 5/16
+
+<br>
+<br>
+
+ **오류해결**
+
+```javascript
+let moveForm = $('#moveForm');
+
+/* 페이지 이동 버튼 */
+$(".pageMaker_btn a").on("click", function(e){
+    
+    e.preventDefault();
+    
+    moveForm.find("input[name='pageNum']").val($(this).attr("href"));
+    
+    moveForm.submit();
+});
+```
+
+<p style="text-align:center; font-size:0.8em;">스크립트 함수 뒤에 괄호와 ;를 안 닫아줘서 스크립트가 작동하지 않았다..</p>
+
+
+![image]({{ site.baseurl }}/images/20230516_130454.png)
+
+
+<p style="text-align:center; font-size:0.8em;">css적용, 잘 작동하는 모습이다.</p>
+
+
+---
+
+## 검색창 기능 구현
+
+### 1. 검색 인터페이 추가(authorMange.jsp)
+
+페이징 \<div>위에 검색창 인터페이스 추가
+
+![image]({{ site.baseurl }}/images/20230516_142518.png)
+
+
+<p style="text-align:center; font-size:0.8em;">검색 인터페이스 추가.</p>
+
+이것만으로도 검색은 된다. 하지만 검색했을때 기본 페이지가 1페이지로 설정되게 하기 위해 스크립트 문 작성.
+
+
+```javascript
+/* 작가 검색 버튼 동작*/
+		$("#searchForm button").on("click",function(e){
+			e.preventDefault();
+			
+			/* 검색 키워드 유효성 검사*/
+			if(!searchForm.find("input[name='keyword']").val()){
+				alert("키워드를 입력하십시오");
+				return false;
+			}
+				
+			searchForm.find("input[name='pageNum']").val("1");
+				
+			searchForm.submit();
+		});
+```
+
+<p style="text-align:center; font-size:0.8em;">검색창에 아무것도 적지않고 검색하면 alert, 검색을 실행하면 페이지 번호를 1로 설정</p>
+
+css도 추가해준다.
+
+
+![image]({{ site.baseurl }}/images/20230516_145702.png)
+
+
+<p style="text-align:center; font-size:0.8em;">css적용. 하지만 어째서인지 검색 버튼이 작동하지 않는다.</p>
+
+script문을 지우면 정상적으로 작동한다. 어디가 잘못 된거지.. 
+
+찾았다. 
+
+
+```javascript
+		let searchForm = $('#searchForm');
+```
+스크립트 메서드를 작성하기 전에 변수명을 선언해주지 않아서 스크립트가 작동되지 않았던것.
+
+![image]({{ site.baseurl }}/images/20230516_150915.png)
+
+
+<p style="text-align:center; font-size:0.8em;">alert도 작동한다.</p>
+
+<br>
+<br>
+<br>
+
+### 2. 검색 결과가 존재하지 않을때의 경우 설정
+
+list.isEmpty()를 사용해 검색 결과가 있는지 없는지 판단한다.
+
+- 검색 결과가 **없으면** isEmpty()의 반환 값은 **TRUE**
+- 검색 결과가 **있으면** isEmpty()의 반환 값은 **FALSE**
+
+
+```java
+	  if(list.isEmpty()) { // 비어있으면
+       	model.addAttribute("listCheck", "empty");
+    } else {	// 검색 결과가 존재한다면
+      	model.addAttribute("list", list);
+		}
+```
+<p style="text-align:center; font-size:0.8em;">AuthorController.java의 authorManage매핑에 작성해준다.</p>
 
 
 
 
+```html
+	 <c:if test="${listCheck !='empty' }">
+						<table class="author_table">
+							.
+							.
+							.
+						</table>
+		</c:if>
+
+		<c:if test="${listCheck == 'empty'}">
+						<div class="table_empty">등록된 작가가 없습니다.</div>
+		</c:if>
+```
+
+<p style="text-align:center; font-size:0.8em;">그리고 authorManage.jsp에 조건문을 추가해 줍니다.</p>
 
 
+![image]({{ site.baseurl }}/images/20230516_152905.png)
 
 
-
+<p style="text-align:center; font-size:0.8em;">완성.</p>
 
 
 

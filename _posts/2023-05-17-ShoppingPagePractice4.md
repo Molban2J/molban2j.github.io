@@ -29,7 +29,7 @@ create table jm_book(
 create sequence jm_book_seq start WITH 1;
 ```
 
-<p style="text-align:center; font-size:0.8em;">book table과 sequence 생성</p>
+<div style="text-align:center; font-size:0.8em;">book table과 sequence 생성</div>
 
 > bookDiscount number(2,2)의 의미<br>
 앞의 2는 자릿수가 최대 2인걸 의미하고, 뒤의 2는 소수점 밑 두자리 수까지 유효하다는 의미이다.
@@ -49,7 +49,7 @@ create table jm_bcate(
 );
 ```
 
-<p style="text-align:center; font-size:0.8em;">category table생성</p>
+<div style="text-align:center; font-size:0.8em;">category table생성</div>
 
 이 예제에서는 카테고리 분류를 세단계로 분류한다(교보문고 분류법 참고했다고 함).
 <br>
@@ -62,7 +62,7 @@ create table jm_bcate(
 ![image]({{ site.baseurl }}/images/20230517_124012.png)
 
 
-<p style="text-align:center; font-size:0.8em;">카테고리 삽입 완료<p>
+<div style="text-align:center; font-size:0.8em;">카테고리 삽입 완료</div>
 
 ---
 
@@ -77,7 +77,7 @@ com.shop.model 패키지 밑에 BookVO.java 생성
 ![image]({{ site.baseurl }}/images/20230517_124609.png)
 
 
-<p style="text-align:center; font-size:0.8em;">BookVO.java<p>
+<div style="text-align:center; font-size:0.8em;">BookVO.java</div>
 
 ---
 
@@ -92,8 +92,8 @@ AdminMapper.java , AdminMapper.xml , AdminService.java , AdminServiceImpl.java �
 
 ![image]({{ site.baseurl }}/images/20230517_125126.png)
 
-<p style="text-align:center; font-size:0.8em;">AdminMapper.java , AdminMapper.xml , AdminService.java , AdminServiceImpl.java 생성
-<p>
+<div style="text-align:center; font-size:0.8em;">AdminMapper.java , AdminMapper.xml , AdminService.java , AdminServiceImpl.java 생성
+</div>
 
 그리고 bookEnroll mapper 작성해줍니다.
 
@@ -106,14 +106,14 @@ AdminMapper.java , AdminMapper.xml , AdminService.java , AdminServiceImpl.java �
 	</insert>
 ```
 
-<p style="text-align:center; font-size:0.8em;">bookEnroll sql문 작성</p>
+<div style="text-align:center; font-size:0.8em;">bookEnroll sql문 작성</div>
 
 그리고 test 실행
 
 ![image]({{ site.baseurl }}/images/20230517_143505.png)
 
-<p style="text-align:center; font-size:0.8em;">test실행
-<p>
+<div style="text-align:center; font-size:0.8em;">test실행
+</div>
 
 <br>
 
@@ -131,7 +131,7 @@ AdminMapper.java , AdminMapper.xml , AdminService.java , AdminServiceImpl.java �
 	}
 ```
 
-<p style="text-align:center; font-size:0.8em;">controller 작성</p>
+<div style="text-align:center; font-size:0.8em;">controller 작성</div>
 
 ---
 
@@ -145,8 +145,8 @@ AdminMapper.java , AdminMapper.xml , AdminService.java , AdminServiceImpl.java �
 
 ![image]({{ site.baseurl }}/images/20230517_145333.png)
 
-<p style="text-align:center; font-size:0.8em;">goodsEnroll.jsp
-<p>
+<div style="text-align:center; font-size:0.8em;">goodsEnroll.jsp
+</div>
 
 버튼이 작동하도록 스크립트 작성
 
@@ -167,7 +167,7 @@ $("#enrollBtn").on("click",function(e){
 </script>
 ```
 
-<p style="text-align:center; font-size:0.8em;">script 작성</p>
+<div style="text-align:center; font-size:0.8em;">script 작성</div>
 
 <br>
 
@@ -200,4 +200,4 @@ e.preventDefault는 이벤트가 발생했을 때 혹여 입력하지 않았지�
 
 ```
 
-<p style="text-align:center; font-size:0.8em;">script 작성</p>
+<div style="text-align:center; font-size:0.8em;">script 작성</div>

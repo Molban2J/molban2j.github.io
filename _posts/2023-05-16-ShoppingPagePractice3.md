@@ -12,7 +12,7 @@ title:  "쇼핑 페이지 예제 클론코딩3"
 	public AuthorVO authorDetail(int authorId);
 ```
 
-<p style="text-align:center; font-size:0.8em;">AuthorMapper.java 코드, xml과 service에도 추가해주도록 하자</p>
+<div style="text-align:center; font-size:0.8em;">AuthorMapper.java 코드, xml과 service에도 추가해주도록 하자</div>
 
 
 
@@ -22,13 +22,13 @@ title:  "쇼핑 페이지 예제 클론코딩3"
 	</select>
 ```
 
-<p style="text-align:center; font-size:0.8em;">AuthorMapper.xml 코드</p>
+<div style="text-align:center; font-size:0.8em;">AuthorMapper.xml 코드</div>
 
 
 ![image]({{ site.baseurl }}/images/20230516_155532.png)
 
 
-<p style="text-align:center; font-size:0.8em;">test 성공<p>
+<div style="text-align:center; font-size:0.8em;">test 성공</div>
 
 
 
@@ -45,7 +45,7 @@ title:  "쇼핑 페이지 예제 클론코딩3"
     }
 ```
 
-<p style="text-align:center; font-size:0.8em;">mapper 작성<p>
+<div style="text-align:center; font-size:0.8em;">mapper 작성</div>
 
 <br>
 
@@ -75,7 +75,7 @@ authorManage.jsp에서 authorDetail.jsp로 넘어갈수 있도록 a태그를 달
 		
 ```
 
-<p style="text-align:center; font-size:0.8em;">script 작성<p>
+<div style="text-align:center; font-size:0.8em;">script 작성</div>
 
 > 여기 예제에서는 값을 넘기기 위해서 일일히 스크립트문을 작성해준다.<br> 하지만 오히려 나는 
 
@@ -92,7 +92,7 @@ authorManage.jsp에서 authorDetail.jsp로 넘어갈수 있도록 a태그를 달
 
 ![image]({{ site.baseurl }}/images/20230516_161211.png)
 
-<p style="text-align:center; font-size:0.8em;">  a 태그 작성까지 완성<p>
+<div style="text-align:center; font-size:0.8em;">  a 태그 작성까지 완성</div>
 
 
 <br>
@@ -103,7 +103,7 @@ authorManage.jsp에서 authorDetail.jsp로 넘어갈수 있도록 a태그를 달
 
 ![image]({{ site.baseurl }}/images/20230516_165338.png)
 
-<p style="text-align:center; font-size:0.8em;">jsp, css 생성<p>
+<div style="text-align:center; font-size:0.8em;">jsp, css 생성</div>
 
 그리고 작가 목록 버튼과 수정 버튼이 작동할 수 있도록 스크립트 작성
 
@@ -136,12 +136,12 @@ $("#modifyBtn").on("click", function(e){
 </script>
 ```
 
-<p style="text-align:center; font-size:0.8em;">script 작성<p>
+<div style="text-align:center; font-size:0.8em;">script 작성</div>
 
 
 ![image]({{ site.baseurl }}/images/20230516_171404.png)
 
-<p style="text-align:center; font-size:0.8em;">작가 상세페이지 모습<p>
+<div style="text-align:center; font-size:0.8em;">작가 상세페이지 모습</div>
 
 
 > 왜 작가 상세페이지 진입하는데 criteria 정보를 매개변수로 받는지 몰랐는데 실행해보니 깨달았다. 상세 페이지에서 작가 목록창 버튼을 누르면 기존 criteria 정보를 갖고 가기때문에 상세페이지 들어가기 전 페이지 그대로 목록창에 진입하게 된다.
@@ -161,7 +161,7 @@ $("#modifyBtn").on("click", function(e){
 ```java
  @GetMapping({"/authorDetail", "/authorModify"})
 ```
-<p style="text-align:center; font-size:0.8em;">배열 처리 모습<p>
+<div style="text-align:center; font-size:0.8em;">배열 처리 모습</div>
 
 <br>
 <br>
@@ -176,7 +176,7 @@ css도 authorDetail.css로 링크
 
 ![image]({{ site.baseurl }}/images/20230517_105721.png)
 
-<p style="text-align:center; font-size:0.8em;">form 태그 삽입<p>
+<div style="text-align:center; font-size:0.8em;">form 태그 삽입</div>
 
 
 기존 작가이름, 소속 국적, 작가소개 input태그에 disabled와 readonly 속성을 제거해 줍니다.
@@ -208,7 +208,7 @@ form태그에 유효성 검사를 위해 각 input태그 밑에 span태그로 �
 </div>
 ```
 
-<p style="text-align:center; font-size:0.8em;">버튼 부분도 수정해준다.</p>
+<div style="text-align:center; font-size:0.8em;">버튼 부분도 수정해준다.</div>
 
 <br>
 
@@ -267,16 +267,16 @@ let moveForm = $("#moveForm");
 		});
 ```
 
-<p style="text-align:center; font-size:0.8em;">스크립트문 작성</p>
+<div style="text-align:center; font-size:0.8em;">스크립트문 작성</div>
 
 
 ![image]({{ site.baseurl }}/images/20230517_114359.png)
 
-<p style="text-align:center; font-size:0.8em;">버튼도 잘 작동<p>
+<div style="text-align:center; font-size:0.8em;">버튼도 잘 작동</div>
 
 ![image]({{ site.baseurl }}/images/20230517_114956.png)
 
-<p style="text-align:center; font-size:0.8em;">경고문도 잘 작동<p>
+<div style="text-align:center; font-size:0.8em;">경고문도 잘 작동</div>
 
 ### 3. Mapper작성
 
@@ -289,7 +289,7 @@ Author Mapper, service에 수정 메서드를 작성해줍니다.
 </update>
 ```
 
-<p style="text-align:center; font-size:0.8em;">AuthorMapper.xml</p>
+<div style="text-align:center; font-size:0.8em;">AuthorMapper.xml</div>
 
 <br>
 <br>
@@ -309,7 +309,7 @@ form태그에서 post로 정보를 넘겼으니 PostMapping을 작성해 줍니�
 	}
 ```
 
-<p style="text-align:center; font-size:0.8em;">PostMapping</p>
+<div style="text-align:center; font-size:0.8em;">PostMapping</div>
 
 addFlashAttribute로 수정 결과값을 넘겨줬으니 authorManage.jsp에서 확인 alert를 띄우도록 스크립트를 작성해 줍니다.
 
@@ -327,11 +327,11 @@ let mResult = '<c:out value = "${modify_result}"/>';
 		}
 ```
 
-<p style="text-align:center; font-size:0.8em;">alert 스크립트 작성</p>
+<div style="text-align:center; font-size:0.8em;">alert 스크립트 작성</div>
 
 
 ![image]({{ site.baseurl }}/images/20230517_121837.png)
 
 ![image]({{ site.baseurl }}/images/20230517_121850.png)
 
-<p style="text-align:center; font-size:0.8em;">잘 작동하는지 확인<p>
+<div style="text-align:center; font-size:0.8em;">잘 작동하는지 확인</div>

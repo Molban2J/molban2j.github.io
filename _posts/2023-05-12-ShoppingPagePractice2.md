@@ -25,11 +25,11 @@ AuthorManage.jsp페이지에서 작가들 목록을 구현합니다. 기존 목�
 
 ![image]({{ site.baseurl }}/images/20230512_101720.png)
 
- **<p style="text-align:center; font-size:0.8em;">header.jsp<p>**
+ <p style="text-align:center; font-size:0.8em;">header.jsp<p>
 
 ![image]({{ site.baseurl }}/images/20230512_101854.png)
 
-**<p style="text-align:center; font-size:0.8em;">footer.jsp<p>**
+<p style="text-align:center; font-size:0.8em;">footer.jsp<p>
 
 <br>
 그리고 기존 파일의 헤더파일과 푸터파일의 코드가 중복되는 부분을 지워주고 
@@ -75,6 +75,7 @@ com.shop.model 밑에 Criteria.java 생성
 <br>
 
 **Criteria 코드 작성**
+
 
 ```java
 package com.shop.model;
@@ -137,6 +138,7 @@ public class Criteria {
 <br><br><br>
 
 ---
+
 ### 2. Mapper 생성
 
 AuthorMapper.java 인터페이스에 클래스 선언

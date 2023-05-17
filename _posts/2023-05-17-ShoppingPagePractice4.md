@@ -3,6 +3,11 @@ layout: single
 title:  "쇼핑 페이지 예제 클론코딩4"
 ---
 
+개요: 상품등록 창과 상품 관리 창 제작, 그리고 상품 등록창에서 위지윅 에디터 적용
+
+<br>
+<br>
+
 ## 상품 등록
 
 ### 1. 상품 테이블 생성
@@ -201,3 +206,140 @@ e.preventDefault는 이벤트가 발생했을 때 혹여 입력하지 않았지�
 ```
 
 <div style="text-align:center; font-size:0.8em;">script 작성</div>
+
+![image]({{ site.baseurl }}/images/20230517_161054.png)
+
+![image]({{ site.baseurl }}/images/20230517_161230.png)
+
+<div style="text-align:center; font-size:0.8em;">잘 작동
+</div>
+
+---
+
+<br>
+<br>
+
+## 위지윅 에디터 적용
+
+예제에서는 자바스크립트 기반 위지윅 에디터를 사용한다고 한다.
+
+무료 자바스크립트 기반 위지윅 종류
+- CK Editior
+- TinyMCE
+- Toast Editor
+- Summernote 등
+
+예제에서는 **CK Editior 5** 사용
+
+---
+
+<br>
+
+### 1. 사용 준비
+
+[CK Editior 다운로드](https://ckeditor.com/) 
+
+![image]({{ site.baseurl }}/images/20230517_162032.png)
+
+<div style="text-align:center; font-size:0.8em;">CK Editior 다운로드
+</div>
+
+여기서 CDN 방식을 사용하겠다. CDN를 copy, goodsEnroll.jsp에 head 태그 안에 삽입해줍니다.
+
+![image]({{ site.baseurl }}/images/20230517_162318.png)
+
+<div style="text-align:center; font-size:0.8em;">링크 삽입
+</div>
+
+<br>
+<br>
+
+bookIntro와 bookContent부분의 input태그를 textarea로 바꿔준다.
+
+```html
+<div class="form_section">
+	<div class="form_section_title">
+		<label>책 소개</label>
+	</div>
+	<div class="form_section_content">
+		<textarea name="bookIntro" id="bookIntro_textarea"></textarea>
+	</div>
+</div>
+<div class="form_section">
+	<div class="form_section_title">
+		<label>책 목차</label>
+	</div>
+  <div class="form_section_content">
+		<textarea name="bookContents" id="bookContents_textarea"></textarea>
+	</div>
+</div>
+```
+
+<div style="text-align:center; font-size:0.8em;">textarea로 변경</div>
+
+<br>
+<br>
+
+CK Editor를 적용하는 js는 다음과 같다.
+
+```javascript
+ClassicEditor
+		.create(document.querySelector('적용대상 선택자'))
+		.catch(error=>{
+			console.error(error);
+		});
+```
+
+<div style="text-align:center; font-size:0.8em;">CK Editor js</div>
+
+위 코드를 스크립트에 삽입합니다. '적용대상 선택자'에는 적용할 textarea의 id값을 주면 됨
+
+```javascript
+/* 책 소개 */
+		ClassicEditor
+			.create(document.querySelector('#bookIntro_textarea'))
+			.catch(error=>{
+				console.error(error);
+			});
+			
+		/* 책 목차 */	
+		ClassicEditor
+		.create(document.querySelector('#bookContents_textarea'))
+		.catch(error=>{
+			console.error(error);
+		});
+```
+
+<div style="text-align:center; font-size:0.8em;">script</div>
+
+![image]({{ site.baseurl }}/images/20230517_163621.png)
+
+<div style="text-align:center; font-size:0.8em;">적용된 모습
+</div>
+
+칸의 높이가 너무 작으니까 css에서 높이를 수정해 주면 된다.
+
+```css
+.ck-content {						/* ckeditor 높이 */
+    height: 170px;
+}
+
+```
+
+<div style="text-align:center; font-size:0.8em;">css</div>
+
+
+> .ck-content라는 클래스를 나는 설정해 준적이 없는데 저 클래스로 높이 조절이 가능하다. 아마 CK Editor 자체 클래스인것 같다. CK Editor Document에 들어가보면 높이 외에도 다양하게 커스텀 할 수 있도록 설명해 놓았다. <br><br>
+[CK Editor Document](https://ckeditor.com/docs/ckeditor5/latest/features/toolbar/toolbar.html)
+
+
+![image]({{ site.baseurl }}/images/20230517_170322.png)
+
+![image]({{ site.baseurl }}/images/20230517_170500.png)
+
+![image]({{ site.baseurl }}/images/20230517_170537.png)
+
+<div style="text-align:center; font-size:0.8em;">잘 작동하는지 확인
+</div>
+
+> 다만 일반 텍스트 형태로 들어가는 것이 아니라 html형식으로 입력되는것 같다.

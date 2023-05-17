@@ -25,11 +25,12 @@ AuthorManage.jsp페이지에서 작가들 목록을 구현합니다. 기존 목�
 
 ![image]({{ site.baseurl }}/images/20230512_101720.png)
 
- <p style="text-align:center; font-size:0.8em;">header.jsp<p>
+ <div style="text-align:center; font-size:0.8em;">header.jsp<p>
+
 
 ![image]({{ site.baseurl }}/images/20230512_101854.png)
-
-<p style="text-align:center; font-size:0.8em;">footer.jsp<p>
+ 
+<div style="text-align:center; font-size:0.8em;">footer.jsp<p>
 
 <br>
 그리고 기존 파일의 헤더파일과 푸터파일의 코드가 중복되는 부분을 지워주고 
@@ -39,14 +40,14 @@ AuthorManage.jsp페이지에서 작가들 목록을 구현합니다. 기존 목�
 
 <%@ include file="footer.jsp"%>
 ```
-
+ 
 include 해줍니다.
 
 
 
 ![image]({{ site.baseurl }}/images/20230512_104434.png)
 
-<p style="text-align:center; font-size:0.8em;">authorManage.jsp<p>
+<div style="text-align:center; font-size:0.8em;">authorManage.jsp<p>
 
 <br>
 
@@ -57,7 +58,7 @@ include 해줍니다.
 
 ![image]({{ site.baseurl }}/images/20230512_105415.png)
 
-<p style="text-align:center; font-size:0.8em;">css파일<p>
+<div style="text-align:center; font-size:0.8em;">css파일<p>
 
 중복코드 삭제 & footer.jsp, header.jsp에 link로 css적용
 
@@ -172,7 +173,7 @@ AuthorMapper.xml과 AuthorService.java, AuthorServiceImpl.java에도 코드를 �
 	</select>
 ```
 
-<p style="text-align:center; font-size:0.8em;">AuthorMapper.xml 코드</p>
+<div style="text-align:center; font-size:0.8em;">AuthorMapper.xml 코드</div>
 
 위 코드는 잘 이해가 가지 않으니 하나씩 뜯어서 이해해보려 한다.
 
@@ -186,14 +187,14 @@ insert into jm_author (authorId, authorName, nationId)(select author_seq.nextval
 
 ![image]({{ site.baseurl }}/images/20230512_121257.png)
 
-<p style="text-align:center; font-size:0.8em;">sql실행<p>
+<div style="text-align:center; font-size:0.8em;">sql실행<p>
 
 >약 25000개의 자료를 넣었다. <br>sql문을 작성하면서도 오류를 발견했는데, jm_author 테이블에는 authorIntro이라는 long타입의 칼럼이 존재하는데, 이 칼럼명을 포함에서 재귀 복사를 하려면 오류가 발생한다.
 
 ```sql
 insert into jm_author (authorId, authorName, nationId, authorIntro)(select author_seq.nextval, authorName, nationId, authorIntro from jm_author);
 ```
-<p style="text-align:center; font-size:0.8em;">이 sql문을 실행하면<p>
+<div style="text-align:center; font-size:0.8em;">이 sql문을 실행하면<p>
 
 ```sql
 명령의 30 행에서 시작하는 중 오류 발생 -
@@ -206,7 +207,7 @@ SQL 오류: ORA-00997: illegal use of LONG datatype
 *Action:
 ```
 
-<p style="text-align:center; font-size:0.8em;">이러한 오류가 뜬다..<p>
+<div style="text-align:center; font-size:0.8em;">이러한 오류가 뜬다..<p>
 
 >long 타입의 잘못된 사용이라는 건데.. 찾아보니 long타입에는 제약 조건이 몇가지 있다.
 * 집계함수나 그룹화에서 사용할 수 없음
@@ -220,7 +221,7 @@ SQL 오류: ORA-00997: illegal use of LONG datatype
 ```sql
 ALTER TABLE jm_author MODIFY authorIntro CLOB;
 ```
-<p style="text-align:center; font-size:0.8em;">Long 형을 CLOB 형으로<p>
+<div style="text-align:center; font-size:0.8em;">Long 형을 CLOB 형으로<p>
 
 
 > 하지만... 될 줄 알았지만 다시 오류가 떴다.....
@@ -233,7 +234,7 @@ insert into jm_author (authorId, authorName, nationId,authorIntro)(select author
 ORA-01502: index 'SCOTT.SYS_C008154' or partition of such index is in unusable state
 ```
 
-<p style="text-align:center; font-size:0.8em;">다시 오류발생..<p>
+<div style="text-align:center; font-size:0.8em;">다시 오류발생..<p>
 
 > 이 오류는 인덱스가 손상되거나 잘못된 방법으로 수정되었을때 뜨는 오류라고 한다. 아마 alter table로 자료형을 바꾸다 보니 인덱스가 손상된거 같다.<br> 그냥 Drop table로 테이블을 삭제하고 다시 만들었다. 다시 만들었더니 재귀복사가 잘 된다.
 
@@ -279,7 +280,7 @@ order by 명령문을 사용해도 똑같은 결과를 얻지만, order by의 �
 <![CDATA[]]]>
 ```
 
-<p style="text-align:center; font-size:0.8em;">이 태그는 부등호 등 수학기호를 쓰기 위해서 사용한다.</p>
+<div style="text-align:center; font-size:0.8em;">이 태그는 부등호 등 수학기호를 쓰기 위해서 사용한다.</div>
 
 <br>
 <br>
@@ -289,7 +290,7 @@ order by 명령문을 사용해도 똑같은 결과를 얻지만, order by의 �
 	authorName like '%'||#{keyword}||'%' and
 </if>
 ```
-<p style="text-align:center; font-size:0.8em;">keyword가 존재한다면 keyword 검색</p>
+<div style="text-align:center; font-size:0.8em;">keyword가 존재한다면 keyword 검색</div>
 
 
 <br>
@@ -305,7 +306,7 @@ mapper도 만들었으니 JUnitTest 진행
 
 ![image]({{ site.baseurl }}/images/20230512_144058.png)
 
-<p style="text-align:center; font-size:0.8em;">test가 잘 작동한다.</p>
+<div style="text-align:center; font-size:0.8em;">test가 잘 작동한다.</div>
 
 <br>
 <br>
@@ -314,7 +315,7 @@ mapper도 만들었으니 JUnitTest 진행
 
 ![image]({{ site.baseurl }}/images/20230512_144602.png)
 
-<p style="text-align:center; font-size:0.8em;">어째서인지 keyword로 검색한 결과로 나오는게 아니라 이전과 똑같이 나온다.</p>
+<div style="text-align:center; font-size:0.8em;">어째서인지 keyword로 검색한 결과로 나오는게 아니라 이전과 똑같이 나온다.</div>
 
 <br>
 
@@ -325,7 +326,7 @@ Criteria cri = new Criteria(3,10);
 List<AuthorVO> list = mapper.authorList(cri);
 cri.setKeyword("홍준");
 ```
-<p style="text-align:center; font-size:0.8em;">setKeyword의 순서가 잘못 됐다.</p>
+<div style="text-align:center; font-size:0.8em;">setKeyword의 순서가 잘못 됐다.</div>
 
 
 ```java
@@ -334,24 +335,24 @@ cri.setKeyword("홍준");
 List<AuthorVO> list = mapper.authorList(cri);
 ```
 
-<p style="text-align:center; font-size:0.8em;">변경 후</p>
+<div style="text-align:center; font-size:0.8em;">변경 후</div>
 
 <br>
 
 ![image]({{ site.baseurl }}/images/20230512_145455.png)
 
-<p style="text-align:center; font-size:0.8em;">잘 작동되는 모습</p>
+<div style="text-align:center; font-size:0.8em;">잘 작동되는 모습</div>
 
 ---
 ### 3. Service 생성
 
 ![image]({{ site.baseurl }}/images/20230512_145811.png)
 
-<p style="text-align:center; font-size:0.8em;">service 생성</p>
+<div style="text-align:center; font-size:0.8em;">service 생성</div>
 
 ![image]({{ site.baseurl }}/images/20230512_145919.png)
 
-<p style="text-align:center; font-size:0.8em;">serviceImpl 생성</p>
+<div style="text-align:center; font-size:0.8em;">serviceImpl 생성</div>
 
 <br>
 <br>
@@ -365,7 +366,7 @@ List<AuthorVO> list = mapper.authorList(cri);
         logger.info("작가 관리 페이지 접속");
     }   
 ```
-<p style="text-align:center; font-size:0.8em;">기존의 controller</p>
+<div style="text-align:center; font-size:0.8em;">기존의 controller</div>
 
 ```java
   /* 작가 관리 페이지 접속 */
@@ -378,7 +379,7 @@ List<AuthorVO> list = mapper.authorList(cri);
     }  
 ```
 
-<p style="text-align:center; font-size:0.8em;">변경 후</p>
+<div style="text-align:center; font-size:0.8em;">변경 후</div>
 
 
 > 하지만 여기서 의문점이 생겼다.
@@ -431,7 +432,7 @@ public class AuthorVO {
 		
 }
 ```
-<p style="text-align:center; font-size:0.8em;">변경 후<br>lombok의 data어노테이션이 있어도 getter/setter를 정의해주면 나중에 따로 정의한 getter/setter를 기준으로 데이터를 매핑한다.</p>
+<div style="text-align:center; font-size:0.8em;">변경 후<br>lombok의 data어노테이션이 있어도 getter/setter를 정의해주면 나중에 따로 정의한 getter/setter를 기준으로 데이터를 매핑한다.</div>
 
 
 <br>
@@ -467,17 +468,17 @@ public class AuthorVO {
 			</table>
 		</div>
 ```
-<p style="text-align:center; font-size:0.8em;">authorManage.jsp</p>
+<div style="text-align:center; font-size:0.8em;">authorManage.jsp</div>
 
 
 ![image]({{ site.baseurl }}/images/20230512_154037.png)
 
-<p style="text-align:center; font-size:0.8em;">실행 결과 <br> 매우 이상하긴한데 나오긴 나온다. 일단 css적용해보기로</p>
+<div style="text-align:center; font-size:0.8em;">실행 결과 <br> 매우 이상하긴한데 나오긴 나온다. 일단 css적용해보기로</div>
 
 
 ![image]({{ site.baseurl }}/images/20230512_154605.png)
 
-<p style="text-align:center; font-size:0.8em;">쨘</p>
+<div style="text-align:center; font-size:0.8em;">쨘</div>
 
 ---
 
@@ -539,7 +540,7 @@ public class PageVO {
 
 ```
 
- <p style="text-align:center; font-size:0.8em;">PageVO</p>
+ <div style="text-align:center; font-size:0.8em;">PageVO</div>
 
 <br>
 
@@ -561,7 +562,7 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 //전체 데이터 개수
 	public int authorTotal(Criteria cri);
 ```
-<p style="text-align:center; font-size:0.8em;">AuthorMapper.java에 추가</p>
+<div style="text-align:center; font-size:0.8em;">AuthorMapper.java에 추가</div>
 
 ```xml
 <select id="authorTotal" resultType="int">
@@ -571,11 +572,11 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 		</if>
 	</select>
 ```
-<p style="text-align:center; font-size:0.8em;">AuthorMapper.xml에 추가</p>
+<div style="text-align:center; font-size:0.8em;">AuthorMapper.xml에 추가</div>
 
 ![image]({{ site.baseurl }}/images/20230512_162114.png)
 
-<p style="text-align:center; font-size:0.8em;">JUnitTest성공</p>
+<div style="text-align:center; font-size:0.8em;">JUnitTest성공</div>
 
 +AuthorService.java, AuthorServiceImpl.java에도 코드 추가
 <br>
@@ -589,7 +590,7 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
         
         model.addAttribute("pageMaker", pageMaker);
 ```
-<p style="text-align:center; font-size:0.8em;">AdminController에 authorManage매퍼에 삽입</p>
+<div style="text-align:center; font-size:0.8em;">AdminController에 authorManage매퍼에 삽입</div>
 
 ---
 
@@ -624,7 +625,7 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 
 ```
 
-<p style="text-align:center; font-size:0.8em;">authorMange.jsp에 페이지 버튼 삽입</p>
+<div style="text-align:center; font-size:0.8em;">authorMange.jsp에 페이지 버튼 삽입</div>
 
 \<li class='pageMaker_btn ${pageMaker.cri.pageNum == num ? "active":""}'> 이 코드는 현재 페이지면 버튼을 비활성화 하고 아니라면 활성화하여 이동할수 있게 하는 코드
 
@@ -637,7 +638,7 @@ ceil함수는 소수점을 올림하는 함수이다. <br>
 	</form>
 ```
 
-<p style="text-align:center; font-size:0.8em;">버튼을 누르면 페이지 값들이 넘어가도록 폼태그 작성</p>
+<div style="text-align:center; font-size:0.8em;">버튼을 누르면 페이지 값들이 넘어가도록 폼태그 작성</div>
 
 그리고 버튼을 눌렀을때 submit이 되도록 스크립트문 작성
 
@@ -655,18 +656,18 @@ $(".pageMaker_btn a").on("click", function(e){
     moveForm.submit();
 ```
 
-<p style="text-align:center; font-size:0.8em;">script문</p>
+<div style="text-align:center; font-size:0.8em;">script문</div>
 
 
 
 ![image]({{ site.baseurl }}/images/20230512_164043.png)
 
 
-<p style="text-align:center; font-size:0.8em;">실행했을때 모습. css적용하기 전 모습이다.</p>
+<div style="text-align:center; font-size:0.8em;">실행했을때 모습. css적용하기 전 모습이다.</div>
 
 <br>
 
-그리고 페이지 버튼을 누르면 주소가 /admin/pageNum이렇게 떠서 매핑이 되질 않는다. 이 오류는 차차 해결해 보는거로..
+그리고 페이지 버튼을 누르면 주소가 /admin/divageNum이렇게 떠서 매핑이 되질 않는다. 이 오류는 차차 해결해 보는거로..
 
 ---
 
@@ -691,13 +692,13 @@ $(".pageMaker_btn a").on("click", function(e){
 });
 ```
 
-<p style="text-align:center; font-size:0.8em;">스크립트 함수 뒤에 괄호와 ;를 안 닫아줘서 스크립트가 작동하지 않았다..</p>
+<div style="text-align:center; font-size:0.8em;">스크립트 함수 뒤에 괄호와 ;를 안 닫아줘서 스크립트가 작동하지 않았다..</div>
 
 
 ![image]({{ site.baseurl }}/images/20230516_130454.png)
 
 
-<p style="text-align:center; font-size:0.8em;">css적용, 잘 작동하는 모습이다.</p>
+<div style="text-align:center; font-size:0.8em;">css적용, 잘 작동하는 모습이다.</div>
 
 
 ---
@@ -711,7 +712,7 @@ $(".pageMaker_btn a").on("click", function(e){
 ![image]({{ site.baseurl }}/images/20230516_142518.png)
 
 
-<p style="text-align:center; font-size:0.8em;">검색 인터페이스 추가.</p>
+<div style="text-align:center; font-size:0.8em;">검색 인터페이스 추가.</div>
 
 이것만으로도 검색은 된다. 하지만 검색했을때 기본 페이지가 1페이지로 설정되게 하기 위해 스크립트 문 작성.
 
@@ -733,7 +734,7 @@ $(".pageMaker_btn a").on("click", function(e){
 		});
 ```
 
-<p style="text-align:center; font-size:0.8em;">검색창에 아무것도 적지않고 검색하면 alert, 검색을 실행하면 페이지 번호를 1로 설정</p>
+<div style="text-align:center; font-size:0.8em;">검색창에 아무것도 적지않고 검색하면 alert, 검색을 실행하면 페이지 번호를 1로 설정</div>
 
 css도 추가해준다.
 
@@ -741,7 +742,7 @@ css도 추가해준다.
 ![image]({{ site.baseurl }}/images/20230516_145702.png)
 
 
-<p style="text-align:center; font-size:0.8em;">css적용. 하지만 어째서인지 검색 버튼이 작동하지 않는다.</p>
+<div style="text-align:center; font-size:0.8em;">css적용. 하지만 어째서인지 검색 버튼이 작동하지 않는다.</div>
 
 script문을 지우면 정상적으로 작동한다. 어디가 잘못 된거지.. 
 
@@ -756,7 +757,7 @@ script문을 지우면 정상적으로 작동한다. 어디가 잘못 된거지.
 ![image]({{ site.baseurl }}/images/20230516_150915.png)
 
 
-<p style="text-align:center; font-size:0.8em;">alert도 작동한다.</p>
+<div style="text-align:center; font-size:0.8em;">alert도 작동한다.</div>
 
 <br>
 <br>
@@ -777,7 +778,7 @@ list.isEmpty()를 사용해 검색 결과가 있는지 없는지 판단한다.
       	model.addAttribute("list", list);
 		}
 ```
-<p style="text-align:center; font-size:0.8em;">AuthorController.java의 authorManage매핑에 작성해준다.</p>
+<div style="text-align:center; font-size:0.8em;">AuthorController.java의 authorManage매핑에 작성해준다.</div>
 
 
 
@@ -796,13 +797,13 @@ list.isEmpty()를 사용해 검색 결과가 있는지 없는지 판단한다.
 		</c:if>
 ```
 
-<p style="text-align:center; font-size:0.8em;">그리고 authorManage.jsp에 조건문을 추가해 줍니다.</p>
+<div style="text-align:center; font-size:0.8em;">그리고 authorManage.jsp에 조건문을 추가해 줍니다.</div>
 
 
 ![image]({{ site.baseurl }}/images/20230516_152905.png)
 
 
-<p style="text-align:center; font-size:0.8em;">완성.</p>
+<div style="text-align:center; font-size:0.8em;">완성.</div>
 
 
 

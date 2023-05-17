@@ -31,6 +31,7 @@ title:  "쇼핑 페이지 예제 클론코딩3"
 <p style="text-align:center; font-size:0.8em;">test 성공<p>
 
 
+
  ```java
 @GetMapping("/authorDetail")
     public void authorDetailGET(int authorId, Model model, Criteria cri) throws Exception {

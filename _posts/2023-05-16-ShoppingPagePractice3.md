@@ -49,7 +49,7 @@ title:  "쇼핑 페이지 예제 클론코딩3"
 
 <br>
 
-authorManage.jsp에서 authorDetail.jsp로 넘어갈수 있도록 \<a> 태그를 달아줍니다.
+authorManage.jsp에서 authorDetail.jsp로 넘어갈수 있도록 a태그를 달아줍니다.
 
 ```html
 <td>

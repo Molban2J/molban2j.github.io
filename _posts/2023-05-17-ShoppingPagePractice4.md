@@ -3,7 +3,7 @@ layout: single
 title:  "쇼핑 페이지 예제 클론코딩4"
 ---
 
-개요: 상품등록 창과 상품 관리 창 제작, 그리고 상품 등록창에서 위지윅 에디터 적용
+개요: 상품등록 창과 상품 관리 창 제작, 그리고 상품 등록창에서 위지윅, Datepicker 에디터 적용
 
 <br>
 <br>
@@ -343,3 +343,159 @@ ClassicEditor
 </div>
 
 > 다만 일반 텍스트 형태로 들어가는 것이 아니라 html형식으로 입력되는것 같다.
+
+
+---
+
+<br>
+<br>
+
+## Datepicker 위젯 적용
+
+지금까지 작성한 입력 폼에서 출판 년월일을 입력하려면 "yyyy/MM//dd" 형식의 String 값으로 입력해야 했다. 이것이 굉장히 불편했는데 Datepicker 위젯을 이용해 이를 개선한다.
+
+[Datepicker](https://jqueryui.com/download/)
+
+위 링크는 직접 zip파일로 다운받을수 있는 사이트
+
+하지만 여기서는 똑같이 CDN으로 적용하겠다.
+아래 링크 삽입
+
+```javascript
+<link rel="stylesheet" href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+```
+
+<div style="text-align:center; font-size:0.8em;">CDN</div>
+
+이제 출판일 input 태그에 코드를 추가해준다.
+
+```html
+<div class="form_section">
+		<div class="form_section_title">
+				<label>출판일</label>
+		</div>
+		<div class="form_section_content">
+				<input name="publeYear" autocomplete="off" readonly="readonly">
+		</div>
+</div>
+
+```
+
+<div style="text-align:center; font-size:0.8em;">출판일</div>
+
+<br>
+
+autocomplete는 이전의 입력값이 자동으로 완성되는것을 막기위해 "off"로 해주고 readonly는 사용자가 인위적으로 입력값을 바꾸지 못하도록 하기위해 설정해줬다.
+
+<br>
+
+Datepicker의 js코드
+
+```javascript
+$(function() {
+  $( "선택자" ).datepicker();
+});
+
+```
+
+<div style="text-align:center; font-size:0.8em;">js code</div>
+
+```javascript
+$(function() {
+  $( "input[name='publeYear']" ).datepicker();
+});
+
+```
+
+<div style="text-align:center; font-size:0.8em;">script</div>
+
+<br>
+<br>
+
+![image]({{ site.baseurl }}/images/20230517_173456.png)
+
+<div style="text-align:center; font-size:0.8em;">datepicker 적용모습
+</div>
+
+![image]({{ site.baseurl }}/images/20230517_173625.png)
+
+<div style="text-align:center; font-size:0.8em;">날짜를 클릭했을때 입력된 모습
+</div>
+
+지금은 "dd/MM/yyyy"형식이지만 "yy/MM/dd"형식으로 바꿔 보겠다.
+
+```javascript
+const config = {
+				dateFormat: 'yy-mm-dd'	
+			}
+
+```
+
+<div style="text-align:center; font-size:0.8em;">script</div>
+
+<br>
+하지만 정상적으로 작동하지 않는다. 여전히 "dd/MM/yyyy"형식으로 나와서 위 코드를 지우고 기존의 코드를
+
+```javascript
+$(function() {
+			  $( "input[name='publeYear']" ).datepicker({ format: 'YYYY-MM-DD' });
+			});
+
+```
+
+이렇게도 바꿔 보았지만 바뀌지 않는다.
+
+```javascript
+$(function() {
+			  $( "input[name='publeYear']" ).datepicker({ dateFormat: 'YYYY-MM-DD' });
+			});
+
+```
+
+이렇게 바꾸니 바뀐다!
+
+<br>
+
+하지만 
+
+![image]({{ site.baseurl }}/images/20230517_180816.png)
+
+<div style="text-align:center; font-size:0.8em;">이런식으로 입력이 된다.
+</div>
+
+<br>
+
+```javascript
+$(function() {
+			  $( "input[name='publeYear']" ).datepicker({ dateFormat: 'yyyy-MM-dd' });
+			});
+
+```
+
+이렇게 바꿔 보겠다.
+
+
+![image]({{ site.baseurl }}/images/20230517_181225.png)
+
+<div style="text-align:center; font-size:0.8em;">결과...
+</div>
+
+
+```javascript
+$(function() {
+			  $( "input[name='publeYear']" ).datepicker({ dateFormat: 'yy-mm-dd' });
+			});
+
+```
+
+다시한번 포멧 수정
+
+![image]({{ site.baseurl }}/images/20230517_181735.png)
+
+<div style="text-align:center; font-size:0.8em;">드디어 제데로 됐다.
+</div>
+
+오늘은 여기까지(5/17)

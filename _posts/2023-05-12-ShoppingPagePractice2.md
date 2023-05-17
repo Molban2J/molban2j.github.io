@@ -25,12 +25,12 @@ AuthorManage.jsp페이지에서 작가들 목록을 구현합니다. 기존 목�
 
 ![image]({{ site.baseurl }}/images/20230512_101720.png)
 
- <div style="text-align:center; font-size:0.8em;">header.jsp<p>
+ <div style="text-align:center; font-size:0.8em;">header.jsp</div>
 
 
 ![image]({{ site.baseurl }}/images/20230512_101854.png)
  
-<div style="text-align:center; font-size:0.8em;">footer.jsp<p>
+<div style="text-align:center; font-size:0.8em;">footer.jsp</div>
 
 <br>
 그리고 기존 파일의 헤더파일과 푸터파일의 코드가 중복되는 부분을 지워주고 
@@ -47,7 +47,7 @@ include 해줍니다.
 
 ![image]({{ site.baseurl }}/images/20230512_104434.png)
 
-<div style="text-align:center; font-size:0.8em;">authorManage.jsp<p>
+<div style="text-align:center; font-size:0.8em;">authorManage.jsp</div>
 
 <br>
 
@@ -58,7 +58,7 @@ include 해줍니다.
 
 ![image]({{ site.baseurl }}/images/20230512_105415.png)
 
-<div style="text-align:center; font-size:0.8em;">css파일<p>
+<div style="text-align:center; font-size:0.8em;">css파일</div>
 
 중복코드 삭제 & footer.jsp, header.jsp에 link로 css적용
 
@@ -187,14 +187,14 @@ insert into jm_author (authorId, authorName, nationId)(select author_seq.nextval
 
 ![image]({{ site.baseurl }}/images/20230512_121257.png)
 
-<div style="text-align:center; font-size:0.8em;">sql실행<p>
+<div style="text-align:center; font-size:0.8em;">sql실행</div>
 
 >약 25000개의 자료를 넣었다. <br>sql문을 작성하면서도 오류를 발견했는데, jm_author 테이블에는 authorIntro이라는 long타입의 칼럼이 존재하는데, 이 칼럼명을 포함에서 재귀 복사를 하려면 오류가 발생한다.
 
 ```sql
 insert into jm_author (authorId, authorName, nationId, authorIntro)(select author_seq.nextval, authorName, nationId, authorIntro from jm_author);
 ```
-<div style="text-align:center; font-size:0.8em;">이 sql문을 실행하면<p>
+<div style="text-align:center; font-size:0.8em;">이 sql문을 실행하면</div>
 
 ```sql
 명령의 30 행에서 시작하는 중 오류 발생 -
@@ -207,7 +207,7 @@ SQL 오류: ORA-00997: illegal use of LONG datatype
 *Action:
 ```
 
-<div style="text-align:center; font-size:0.8em;">이러한 오류가 뜬다..<p>
+<div style="text-align:center; font-size:0.8em;">이러한 오류가 뜬다..</div>
 
 >long 타입의 잘못된 사용이라는 건데.. 찾아보니 long타입에는 제약 조건이 몇가지 있다.
 * 집계함수나 그룹화에서 사용할 수 없음
@@ -221,7 +221,7 @@ SQL 오류: ORA-00997: illegal use of LONG datatype
 ```sql
 ALTER TABLE jm_author MODIFY authorIntro CLOB;
 ```
-<div style="text-align:center; font-size:0.8em;">Long 형을 CLOB 형으로<p>
+<div style="text-align:center; font-size:0.8em;">Long 형을 CLOB 형으로</div>
 
 
 > 하지만... 될 줄 알았지만 다시 오류가 떴다.....
@@ -234,7 +234,7 @@ insert into jm_author (authorId, authorName, nationId,authorIntro)(select author
 ORA-01502: index 'SCOTT.SYS_C008154' or partition of such index is in unusable state
 ```
 
-<div style="text-align:center; font-size:0.8em;">다시 오류발생..<p>
+<div style="text-align:center; font-size:0.8em;">다시 오류발생..</div>
 
 > 이 오류는 인덱스가 손상되거나 잘못된 방법으로 수정되었을때 뜨는 오류라고 한다. 아마 alter table로 자료형을 바꾸다 보니 인덱스가 손상된거 같다.<br> 그냥 Drop table로 테이블을 삭제하고 다시 만들었다. 다시 만들었더니 재귀복사가 잘 된다.
 

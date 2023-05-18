@@ -457,6 +457,24 @@ $(function() {
 
 이렇게 바꾸니 바뀐다!
 
+> **문제점 발견** (5/18 추가)
+<br>
+<br>
+처음에는 예제의 스크립트 버전이 오래되서 작동이 안되는줄로 알았지만 아니었다...
+
+```javascript
+const config = {
+				dateFormat: 'yy-mm-dd'	
+}
+
+$(function() {
+			$( "input[name='publeYear']" ).datepicker(config);
+});
+
+```
+
+> 이런식으로 config 변수를 넣어줬어야했는데 그러지 않아서 변경사항이 적용되지 않았던 것이다...
+
 <br>
 
 하지만 
@@ -499,3 +517,178 @@ $(function() {
 </div>
 
 오늘은 여기까지(5/17)
+
+---
+
+5/18
+
+지금은 input칸을 클릭하면 달력이 나타나는 형태이지만, 날짜선택 버튼을 만들어 실행해보겠습니다.
+
+```javascript
+	$(function() {
+			  $( "input[name='publeYear']" ).datepicker({ 
+				  dateFormat: 'yy-mm-dd',
+				showOn : "button",
+				buttonText:"날짜 선택"
+			  });
+			});
+
+```
+
+<div style="text-align:center; font-size:0.8em;">코드 추가
+</div>
+
+<br>
+<br>
+
+![image]({{ site.baseurl }}/images/20230518_103623.png)
+
+![image]({{ site.baseurl }}/images/20230518_103634.png)
+
+<div style="text-align:center; font-size:0.8em;">버튼 클릭시
+</div>
+
+<br>
+
+그리고 달력이 현재 영어로 표시되어있는데, 이것을 한글로도 바꿀 수 있다고 한다. 한글로 바꿔 보겠다.
+
+```javascript
+$(function() {
+			  $( "input[name='publeYear']" ).datepicker({ 
+				  dateFormat: 'yy-mm-dd',
+				showOn : "button",
+				buttonText:"날짜 선택",
+				 prevText: '이전 달',
+				    nextText: '다음 달',
+				    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				    dayNames: ['일','월','화','수','목','금','토'],
+				    dayNamesShort: ['일','월','화','수','목','금','토'],
+				    dayNamesMin: ['일','월','화','수','목','금','토'],
+				    yearSuffix: '년'
+			  });
+			});
+```
+
+<div style="text-align:center; font-size:0.8em;">코드 추가
+</div>
+
+<br>
+
+![image]({{ site.baseurl }}/images/20230518_104411.png)
+
+<div style="text-align:center; font-size:0.8em;">한글로 변경됐다.
+</div>
+
+<br>
+
+현재 달력은 월 단위로 화살표를 이용해서 움직여야하는데, 연/월을 \<select>를 이용해서 선택할 수 있게 하겠다.
+
+```javascript
+$(function() {
+			  $( "input[name='publeYear']" ).datepicker({ 
+				  dateFormat: 'yy-mm-dd',
+				showOn : "button",
+				buttonText:"날짜 선택",
+				 prevText: '이전 달',
+				    nextText: '다음 달',
+				    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				    dayNames: ['일','월','화','수','목','금','토'],
+				    dayNamesShort: ['일','월','화','수','목','금','토'],
+				    dayNamesMin: ['일','월','화','수','목','금','토'],
+				    yearSuffix: '년',
+				    changeMonth: true,
+				    changeYear: true
+			  });
+			});
+```
+
+<div style="text-align:center; font-size:0.8em;">코드 추가
+</div>
+
+![image]({{ site.baseurl }}/images/20230518_104752.png)
+
+<div style="text-align:center; font-size:0.8em;">선택창으로 변경</div>
+
+
+<br>
+<br>
+
+마지막으로 버튼과 입력창의 css를 적용해줍니다.
+
+```css
+.ui-datepicker-trigger {						/* 캘린더 css 설정 */
+    margin-left: 25px;
+    width: 14%;
+    height: 38px;
+    font-weight: 600;
+    background-color: #dfe8f5;
+    font-size: 15px;
+    cursor:pointer;
+}
+input[name='publeYear'] {
+    width: 80%;
+    text-align: center;
+}
+```
+
+<div style="text-align:center; font-size:0.8em;">css코드 추가
+</div>
+
+<br>
+Datepicker도 위즈윅처럼 기본 내장된 클래스를 변경할 수 있는 것 같다.
+
+<br>
+
+![image]({{ site.baseurl }}/images/20230518_105120.png)
+
+<div style="text-align:center; font-size:0.8em;">최종 모습</div>
+
+<br>
+<br>
+
+### 테스트
+
+테스트로 등록해보려 했으나 이게 웬걸 오류가 떠버렸다.
+
+```
+WARN : org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'bookVO' on field 'publeYear': rejected value [2023-05-25]; codes [typeMismatch.bookVO.publeYear,typeMismatch.publeYear,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [bookVO.publeYear,publeYear]; arguments []; default message [publeYear]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'publeYear'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.util.Date] for value '2023-05-25'; nested exception is java.lang.IllegalArgumentException]]
+```
+
+<div style="text-align:center; font-size:0.8em;">오류메세지
+</div>
+
+<br>
+
+아무래도 입력 데이터 형식이 맞지않아 발생한 문제 같다. 형을 임의로 "yy-mm-dd"형식으로 바꿨는데 이 형식이 삽입하는데 오류가 발생하는 것으로 보인다.
+
+한번 "yy/mm/dd"로 바꿔서 해보겠다. 이전 String 값으로 넘길 때 저 형식으로 했을 때 잘 들어갔기 때문이다.
+
+![image]({{ site.baseurl }}/images/20230518_105646.png)
+
+<div style="text-align:center; font-size:0.8em;">입력폼이 바뀜</div>
+
+![image]({{ site.baseurl }}/images/20230518_105702.png)
+
+<div style="text-align:center; font-size:0.8em;">성공적으로 작동 완료. 역시 내 예상이 맞았다!</div>
+
+
+![image]({{ site.baseurl }}/images/20230518_105832.png)
+
+<div style="text-align:center; font-size:0.8em;">데이터 베이스에도 잘 들어간 모습</div>
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+## 내 생각
+
+이 예제는 달력을 Datepicker를 사용해 입력했는데, 현 시점 input type="datetime-local"이나, type="date"을 사용해도 똑같이 달력으로 선택할 수 있는데  굳이 저 위젯을 사용해야하나 싶기도 하다. 
+~~버전이 낮은 웹에서는 작동이 안되서 그러려나...~~

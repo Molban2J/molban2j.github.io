@@ -3,6 +3,12 @@ layout: single
 title:  "쇼핑 페이지 예제 클론코딩3"
 ---
 
+<br>
+
+**깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
+
+<br>
+
 ## 작가 상세보기
 
 ### 1. 작가 상세 보기 Mapper, Service 만들기

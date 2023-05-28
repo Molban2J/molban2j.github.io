@@ -7,6 +7,12 @@ title:  "쇼핑 페이지 예제 클론코딩"
 
 ### 수업시간에 진행한 쇼핑페이지 예제입니다.
 
+<br>
+
+**깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
+
+<br>
+
 현재 로그인, 회원가입 기능 구현 완료
 <br> 
 

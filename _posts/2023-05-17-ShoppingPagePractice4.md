@@ -3,6 +3,12 @@ layout: single
 title:  "쇼핑 페이지 예제 클론코딩4(상품등록,위지윅,Datepicker)"
 ---
 
+<br>
+
+**깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
+
+<br>
+
 개요: 상품등록 창과 상품 관리 창 제작, 그리고 상품 등록창에서 위지윅, Datepicker 에디터 적용
 
 <br>

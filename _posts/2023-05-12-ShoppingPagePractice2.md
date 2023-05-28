@@ -3,6 +3,12 @@ layout: single
 title:  "쇼핑 페이지 예제 클론코딩2"
 ---
 
+<br>
+
+**깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
+
+<br>
+
 5/12
 
 -현재까지 구현된 기능: 메인페이지, 로그인, 회원가입,관리자페이지에서 작가 등록

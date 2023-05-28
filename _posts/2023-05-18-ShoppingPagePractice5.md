@@ -3,6 +3,12 @@ layout: single
 title:  "쇼핑 페이지 예제 클론코딩5(상품등록-작가선택, 카테고리 리스트)"
 ---
 
+<br>
+
+**깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
+
+<br>
+
 ## 상품등록 - 작가선택 팝업 창 구현
 
 ### 1. 작가 선택 버튼 추가

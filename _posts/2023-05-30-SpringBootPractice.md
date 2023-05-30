@@ -5,7 +5,7 @@ title:  "스프링 부트 쇼핑몰 예제"
 
 <br>
 
-**깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
+**깃허브 repository** : [SpringBoot class practice](https://github.com/Molban2J/SpringBootPractice.git "github")
 
 <br>
 

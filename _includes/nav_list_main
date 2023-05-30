@@ -49,7 +49,7 @@
             <span class="nav__sub-title">Java(eclipse)</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Java" %}
+                    {% if category[0] == "Java(eclipse)" %}
                         <li><a href="/java" class="">eclipse({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}

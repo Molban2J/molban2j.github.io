@@ -1,6 +1,13 @@
 # main links
 main:
-  # - title: "Quick-Start Guide"
+   - title: "Categories"
+      childeren:
+        -title: "Spring"
+         url: "/spring"
+         -title: "SpringBoot"
+          url: "/springboot"
+         -title: "Java"
+          url: "/java"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/

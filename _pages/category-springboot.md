@@ -2,6 +2,7 @@
 title: "SpringBoot"
 layout: archive
 permalink: /springboot
+sidebar_main: true
 ---
 
 

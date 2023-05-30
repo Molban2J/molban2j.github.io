@@ -2,6 +2,7 @@
 title: "Spring"
 layout: archive
 permalink: /spring
+sidebar_main: true
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Java(eclipse)"
 layout: archive
 permalink: /java
+sidebar_main: true
 ---
 
 

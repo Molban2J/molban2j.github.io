@@ -2,6 +2,7 @@
 title: "Project"
 layout: archive
 permalink: /project
+sidebar_main: true
 ---
 
 

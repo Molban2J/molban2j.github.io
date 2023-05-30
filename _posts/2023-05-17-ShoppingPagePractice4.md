@@ -1,6 +1,8 @@
 ---
 layout: single
 title:  "쇼핑 페이지 예제 클론코딩4(상품등록,위지윅,Datepicker)"
+categories:
+  - spring
 ---
 
 <br>

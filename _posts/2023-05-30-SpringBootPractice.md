@@ -1,6 +1,8 @@
 ---
 layout: single
 title:  "스프링 부트 쇼핑몰 예제"
+categories:
+  - springboot
 ---
 
 <br>

@@ -1,6 +1,9 @@
 ---
 layout: single
 title:  "첫번째 팀 프로젝트"
+categories:
+  - java
+  - project
 ---
 
 

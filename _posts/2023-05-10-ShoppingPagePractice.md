@@ -1,6 +1,8 @@
 ---
 layout: single
 title:  "쇼핑 페이지 예제 클론코딩"
+categories:
+  - spring
 ---
 
 # 쇼핑 페이지 예제 클론코딩

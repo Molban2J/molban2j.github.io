@@ -17,7 +17,7 @@ categories:
 
 ---
 
-![image]({{ site.baseurl }}/images/2023-05-30/20230531_143219.png)
+![image]({{ site.baseurl }}/images/2023-05-31/20230531_143219.png)
 
 <div style="text-align:center; font-size:0.8em;">프로젝트 의존성 생성. 이전 예제와 달라진건 JPA추가 했다는 점입니다.</div>
 
@@ -34,7 +34,7 @@ domain 패키지 생성후 Member.java를 생성해줍니다.
 
 <br>
 
-![image]({{ site.baseurl }}/images/2023-05-30/20230531_170439.png)
+![image]({{ site.baseurl }}/images/2023-05-31/20230531_170439.png)
 
 <div style="text-align:center; font-size:0.8em;">Member.java</div>
 
@@ -83,13 +83,13 @@ create 설정이 되어있으면 기존의 동일한 이름의 테이블은 drop
 
 <br>
 
-![image]({{ site.baseurl }}/images/2023-05-30/20230531_145944.png)
+![image]({{ site.baseurl }}/images/2023-05-31/20230531_145944.png)
 
 <div style="text-align:center; font-size:0.8em;">실행했을 때 콘솔창</div>
 
 <br>
 
-![image]({{ site.baseurl }}/images/2023-05-30/20230531_172158.png)
+![image]({{ site.baseurl }}/images/2023-05-31/20230531_172158.png)
 
 <div style="text-align:center; font-size:0.8em;">생성된 테이블</div>
 
@@ -103,7 +103,7 @@ create 설정이 되어있으면 기존의 동일한 이름의 테이블은 drop
 
 <br>
 
-![image]({{ site.baseurl }}/images/2023-05-30/20230531_172623.png)
+![image]({{ site.baseurl }}/images/2023-05-31/20230531_172623.png)
 
 <div style="text-align:center; font-size:0.8em;">MemberRepository.java</div>
 
@@ -260,7 +260,7 @@ MemberService를 쓰기위해 객체 선언해주고 Autowired 어노테이션�
 
 MemberService에도 service와 repository를 연결해주기위해 의존성 주입해준다. @Service 어노테이션을 넣어준다.
 
-![image]({{ site.baseurl }}/images/2023-05-30/20230531_182254.png)
+![image]({{ site.baseurl }}/images/2023-05-31/20230531_182254.png)
 
 <div style="text-align:center; font-size:0.8em;">MemberService.java</div>
 
@@ -268,7 +268,7 @@ MemberService에도 service와 repository를 연결해주기위해 의존성 주
 
 MemberRepository에 @Repository 어노테이션 추가해준다.
 
-![image]({{ site.baseurl }}/images/2023-05-30/20230531_182505.png)
+![image]({{ site.baseurl }}/images/2023-05-31/20230531_182505.png)
 
 <div style="text-align:center; font-size:0.8em;">MemberRepository.java</div>
 
@@ -384,7 +384,7 @@ public class MemberForm {
 
 참고로 회원가입 페이지에서 중복된 이름으로 가입을 하면 예외처리가 되기 때문에 오류페이지가 뜬다.
 
-![image]({{ site.baseurl }}/images/2023-05-30/20230531_183555.png)
+![image]({{ site.baseurl }}/images/2023-05-31/20230531_183555.png)
 
 <div style="text-align:center; font-size:0.8em;">중복시 오류 메세지</div>
 
@@ -427,7 +427,7 @@ public class MemberForm {
 <div style="text-align:center; font-size:0.8em;">memberList.html</div>
 
 
-![image]({{ site.baseurl }}/images/2023-05-30/20230531_183914.png)
+![image]({{ site.baseurl }}/images/2023-05-31/20230531_183914.png)
 
 <div style="text-align:center; font-size:0.8em;">회원 목록 구현화면</div>
 

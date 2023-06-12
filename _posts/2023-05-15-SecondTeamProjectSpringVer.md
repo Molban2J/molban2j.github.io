@@ -1,9 +1,9 @@
 ---
 layout: single
-categories:
-  - Spring
-	- Project
 title: "두번째 팀 프로젝트 Spring ver"
+categories:
+  - Project
+  - Spring
 ---
 
 

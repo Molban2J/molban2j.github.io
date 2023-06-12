@@ -7,7 +7,7 @@ categories:
 
 <br>
 
-**깃허브 repository** : [SpringBoot class practice](https://github.com/Molban2J/SpringBootPractice.git "github")
+**깃허브 repository** : [SpringBoot Baemin practice](https://github.com/Molban2J/Baemin.git "github")
 
 \* 참고한 블로그: [blog link](https://sumin2.tistory.com/10?category=900942 "github")
 

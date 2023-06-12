@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  "스프링 부트 JPA 예제"
+title:  "(SpringBoot) JPA 예제"
 categories:
-  - springboot
+  - SpringBoot
 ---
 
 <br>

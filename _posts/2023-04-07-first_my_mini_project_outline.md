@@ -2,7 +2,7 @@
 layout: single
 title:  "첫 개인 프로젝트 개요"
 categories:
-  - project
+  - Project
 ---
 
 # 지하철 노선 혼잡도 표시 프로그램

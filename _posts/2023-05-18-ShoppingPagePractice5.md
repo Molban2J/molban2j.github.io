@@ -2,7 +2,7 @@
 layout: single
 title:  "쇼핑 페이지 예제 클론코딩5(상품등록-작가선택, 카테고리 리스트)"
 categories:
-  - spring
+  - Spring
 ---
 
 <br>

@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  "스프링 부트 게시판 예제"
+title:  "(SpringBoot) 게시판 예제"
 categories:
-  - springboot
+  - Springboot
 ---
 
 <br>

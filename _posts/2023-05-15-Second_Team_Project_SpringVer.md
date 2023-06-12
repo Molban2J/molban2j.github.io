@@ -2,12 +2,13 @@
 layout: single
 title:  "두번째 팀 프로젝트 Spring version"
 categories:
-  - spring
-	- project
+  - Spring
+	- Project
 ---
 
 
 ### 두번째 팀 프로젝트 프레임 워크 eclipse -> Spring
+
 <br>
 
 **깃허브 repository** : [second project spring .ver](https://github.com/Molban2J/SecondProjectSpringVer.git "github")

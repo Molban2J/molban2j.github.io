@@ -2,7 +2,7 @@
 layout: single
 title:  "쇼핑 페이지 예제 클론코딩"
 categories:
-  - spring
+  - Spring
 ---
 
 # 쇼핑 페이지 예제 클론코딩

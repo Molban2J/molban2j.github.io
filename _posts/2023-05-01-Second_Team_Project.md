@@ -2,8 +2,8 @@
 layout: single
 title:  "두번째 팀 프로젝트"
 categories:
-  - java
-  - project
+  - Java
+  - Project
 ---
 
 # 두번째 팀 프로젝트

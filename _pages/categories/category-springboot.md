@@ -2,6 +2,7 @@
 title: "SpringBoot"
 layout: archive
 permalink: categories/springboot
+author_profile: true
 sidebar_main: true
 ---
 

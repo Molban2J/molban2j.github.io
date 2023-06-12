@@ -1,7 +1,7 @@
 ---
 title: "Java(eclipse)"
 layout: archive
-permalink: /java
+permalink: categories/java
 sidebar_main: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Project"
 layout: archive
-permalink: /project
+permalink: categories/project
 sidebar_main: true
 ---
 

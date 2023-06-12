@@ -2,7 +2,7 @@
 layout: single
 title: "(SpringBoot) 배민 클론 코딩"
 categories:
-  - springboot
+  - SpringBoot
 ---
 
 <br>

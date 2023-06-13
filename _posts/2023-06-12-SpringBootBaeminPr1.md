@@ -63,6 +63,35 @@ public class MainController {
 
 <br>
 <br>
+
+그리고 templates 밑에 appliction.yml을 생성해서 thymeleaf와 Oracle Driver설정을 해준다.
+
+```yml
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@127.0.0.1:1521:XE
+    username: scott
+    password: tiger
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    cache: false
+
+```
+
+<div style="text-align:center; font-size:0.8em;">appliction.yml</div>
+
+<br>
+
+*주의: 언제나 application.yml을 작성할 때는 들여 쓰기를 철저하게 지키도록 하자*
+
+<br>
+
+
+<br>
+<br>
 <br>
 
 ## 메인페이지 만들기
@@ -339,6 +368,29 @@ home.html과 css, header, footer등을 만들어준다.
 <br>
 
 파일에 header 나 body태그 등이 제데로 열리지 않거나 닫히지 않은 이유는 다른 파일을 include할때 그 파일에 포함되어 있기 때문이다.
+
+> 원래 기존 코드는 밑에 코드처럼 jsp에서 사용하는 문법이 사용 됐는데,
+
+ ```java
+<%@ include file="/WEB-INF/view/include/link.jsp" %>
+```
+
+<div style="text-align:center; font-size:0.8em;">기존 코드</div>
+
+> 나는 밑에 코드형식으로 thymeleaf로 바꿨다.
+
+ ```java
+<th:block th:insert="/include/link.html"></th:block>
+```
+
+<div style="text-align:center; font-size:0.8em;">수정 코드</div>
+
+> 파일을 포함시키는 방법에는 **th:include** 와 **th:insert** 가 있다. 둘의 차이점은 <br> **th:include**는 파일 내용 그대로 포함한다. 단순히 jsp파일이라도 태그가 삽입된 위치에 파일 그대로 집어 넣는다는 얘기이다. <br> 하지만 **th:insert**는 파일을 태그 또는 텍스트 속성으로 한번 변환하여 삽입한다. 기존 파일의 내용을 현재 파일의 형태나 형식에 맞춰 처리 하여 넣는다. <br> thymeleaf형식으로 바꿔서 진행하긴 하지만 그래도 모르니 th:insert를 사용하여 진행하였다.
+
+<br>
+<br>
+
+> script부분을 보면 ***swal**이라는 메서드가 있는데, 이는 SweetAlert라는 기능이다. Javascript라이브러리 함수로 swal을 호출하면 알림창이 모달 형태로 나타난다. 사용자에게 시각적으로 매력적인 경고 창이나 알림창을 만들때 사용한다고 한다.
 
 <br>
 <br>

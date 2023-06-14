@@ -11,6 +11,14 @@
             📂 <span>전체 글 수</style> <span>{{sum}}</style> <span>개</style> 
       </li>
       <li>
+        <span class="nav__sub-title"><b>Project</b></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Project" %}
+                        <li><a href="/categories/project" class="">Projects({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
         <span class="nav__sub-title">SpringBoot</span>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
@@ -23,13 +31,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "SBProject" %}
-                        <li><a href="/categories/sbproject" class="">Spring Boot Project ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
         <span class="nav__sub-title">Spring</span>
             <ul>
                 {% for category in site.categories %}
@@ -38,14 +39,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "SpringProject" %}
-                        <li><a href="/categories/springproject" class="">Spring Project ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
             <span class="nav__sub-title">Java(eclipse)</span>
             <ul>
                 {% for category in site.categories %}

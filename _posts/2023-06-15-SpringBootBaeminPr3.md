@@ -626,3 +626,361 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 <br>
 
 위에서 보이듯이 비밀번호가 암호화 되서 들어간다.
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+## Spring Security로 로그인
+
+<br>
+<br>
+
+이상 BCryptPasswordEncoder로 암호화였고, Spring Security로 로그인 구현해 보겠다.
+
+위에서 .loginProcessingUrl("/login") 설정해줬듯이 "/login" 링크로 가게 되면 Spring Security에서 가로채서 로그인을 처리하게 된다고 한다.
+
+<br>
+<br>
+
+User role은 USER, ADMIN으로 둘 밖에 선택 못하도록 config 패키지 안에 Role.java를 열거형으로 생성해 준다.
+
+```java
+public enum Role {
+    USER, ADMIN
+}
+
+```
+
+<div style="text-align:center; font-size:0.8em;">Role.java</div>
+
+
+<br>
+<br>
+
+그리고 SpringSecurity는 로그인을 하면 UserDetail 타입의 세션을 생성한다고 한다. DB에서 받을 User 클래스와 LoginService를 생성해 로그인했을 시 회원 정보를 처리하도록 한다. login 패키지를 만들어 파일을 생성한다.
+
+
+```java
+@Getter
+@Setter
+@ToString
+public class User {
+	private long id;
+	private String username;
+	private String password;
+	private String email;
+	private String nickname;
+	private int point;
+	private String phone;
+	private String rating;
+	private Role role;
+	
+	public User(String username, String password, String email, String nickname, String phone) {
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.nickname = nickname;
+		this.phone = phone;
+	}
+}
+```
+
+<div style="text-align:center; font-size:0.8em;">User.java</div>
+
+<br>
+<br>
+<br>
+
+<details>
+<summary>LoginService.java</summary>
+<div markdown="1">
+
+```java
+@Getter
+@Setter
+@ToString
+public class LoginService implements UserDetails {
+    private User user;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> roles = new ArrayList<>();
+        roles.add(new GrantedAuthority() {
+            @Override
+            public String getAuthority() {
+                return user.getRole().toString();
+            }
+        });
+        return roles;
+    }
+
+    @Override
+    public String getPassword() {
+        return user.getPassword();
+    }
+
+    @Override
+    public String getUsername() {
+        return user.getUsername();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+}
+
+```
+
+<div style="text-align:center; font-size:0.8em;">LoginService.java</div>
+
+<br>
+
+여기서 User 클래스는 위에서 만든 dto를 임포트 한다.
+
+
+</div>
+</details>
+
+
+<br>
+<br>
+<br>
+<br>
+
+그리고 유저 정보를 불러오기위해 LoginDetailService.java를 생성하고, Mapper에서 유저 정보를 불러오는 sql을 작성해주도록 한다.
+
+<br>
+<br>
+
+```java
+@Service
+public class LoginDetailService implements UserDetailsService {
+    @Autowired
+    private UserMapper userMapper;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userMapper.login(username);
+
+        if(user != null){
+            LoginService loginDetail = new LoginService();
+            loginDetail.setUser(user);
+
+            return loginDetail;
+        } else {
+            throw new UsernameNotFoundException("유저 없음");
+        }
+    }
+}
+```
+
+<div style="text-align:center; font-size:0.8em;">LoginDetailService.java</div>
+
+<br>
+<br>
+
+
+```java
+ @Select("SELECT U.ID ,U.USERNAME ,U.PASSWORD ,U.EMAIL ,U.NICKNAME ,U.PHONE ,U.RATING,U.ROLE,P.POINT FROM BM_USER U LEFT JOIN (SELECT USER_ID, SUM(POINT) POINT FROM BM_POINT GROUP BY USER_ID) P ON U.ID = P.USER_ID WHERE U.USERNAME = #{username }")
+    public User login(String username);
+```
+
+<div style="text-align:center; font-size:0.8em;">UserMapper.java 추가</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+로그인을 성공 했을 때와 실패 했을 때 피라미터를 전달해 주기위해 LoginSuccess.java , LoginFail.java를 login패키지 안에 만들어준다.
+
+```java
+@Component
+public class LoginSuccess implements AuthenticationSuccessHandler {
+    @Override
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+        response.sendRedirect("/myPage");
+    }
+}
+```
+
+<div style="text-align:center; font-size:0.8em;">LoginSuccess.java</div>
+
+<br>
+<br>
+
+```java
+@Component
+public class LoginFail implements AuthenticationFailureHandler {
+    @Override
+    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
+        if(exception instanceof BadCredentialsException || exception instanceof InternalAuthenticationServiceException){
+            request.setAttribute("loginFailMsg", "아이디와 비밀번호를 확인해 주세요");
+        }
+        request.getRequestDispatcher("/resources/templates/user/login.html").forward(request, response);
+    }
+}
+```
+
+<div style="text-align:center; font-size:0.8em;">LoginFail.java</div>
+
+<br>
+<br>
+<br>
+
+SecurityConfig도 수정해줍니다.
+
+<br>
+
+```java
+@Autowired
+    private LoginFail loginFail;
+@Autowired
+    private LoginSuccess loginSuccess;
+```
+
+<div style="text-align:center; font-size:0.8em;">SecurityConfig.java @Bean 위에 코드추가</div>
+
+<br>
+<br>
+
+```java
+ @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+
+        http.authorizeRequests()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/user/**").hasAnyRole("ADMIN, USER")
+                .anyRequest().permitAll()
+                .and()
+                .formLogin()
+                .loginPage("/")
+                .loginProcessingUrl("/login")
+                .successHandler(loginSuccess)   //추가
+                .failureHandler(loginFail)      //추가
+                .and()
+                .logout()
+                .logoutSuccessUrl("/myPage");
+    }
+```
+
+<div style="text-align:center; font-size:0.8em;">SecurityConfig.java</div>
+
+<br>
+<br>
+
+<br>
+<br>
+
+로그인 실패하면 화면에 로그인 실패 창이 뜨도록 login.html 상단에 코드를 추가해준다.
+
+```html
+<th:block th:if ="${loginFailMsg != null}">
+    <script type="text/javascript">
+        const msg = "${loginFailMsg}";
+        swal(msg);
+    </script>
+</th:block>
+```
+
+<div style="text-align:center; font-size:0.8em;">login.html 두번째 줄에 추가</div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+## 자동 로그인 기능
+
+rememberMe() 매서드를 사용하면 자동 로그인 기능을 사용할 수 있다고 한다.
+
+SecurityConfig.java를 수정해준다.
+
+```java
+@Autowired
+    private LoginDetailService loginDetailService;
+```
+
+<div style="text-align:center; font-size:0.8em;">SecurityConfig.java 추가</div>
+
+<br>
+<br>
+
+
+```java
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+
+        http.authorizeRequests()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/user/**").hasAnyRole("ADMIN, USER")
+                .anyRequest().permitAll()
+                .and()
+                .formLogin()
+                .loginPage("/")
+                .loginProcessingUrl("/login")
+                .successHandler(loginSuccess)
+                .failureHandler(loginFail)
+                .and()
+                .logout()
+                .logoutSuccessUrl("/myPage")
+                .and()          //추가 시작
+                .rememberMe()
+                .key("rememberKey")
+                .rememberMeCookieName("rememberMeCookieName")
+                .rememberMeParameter("remember-me")
+                .tokenValiditySeconds(60 * 60 * 24 * 7)
+                .userDetailsService(loginDetailService);    //추가 끝
+    }
+
+```
+
+<div style="text-align:center; font-size:0.8em;">SecurityConfig.java 추가</div>
+
+<br>
+<br>
+
+* **key("rememberKey")** : 쿠키 값을 암호화 할 때 사용되는 키
+
+* **rememberMeCookieName("rememberMeCookieName")** : 저장할 쿠키의 이름
+
+* **rememberMeParameter("remember-me")** : 로그인 페이지의 체크박스(자동로그인을 체크하는 체크박스) name과 일치해야함. 이 옵션을 쓰지않으면 기본 값은 "remember-me"
+
+* **tokenValiditySeconds(60 * 60 * 24 * 7)** : 쿠키 유지기간 = 일주일로 설정
+
+* **userDetailsService(loginDetailService)** : 유저 정보를 받아올 service
+
+<br>
+<br>
+<br>
+<br>
+
+> 여기까지 작성하고 로그인을 하면 딱 "/myPage"로 가야하나.... 어째서인지 404 에러가 난다. 로그인 성공, 실패도 모두 404에러;; LoginSuccess와 LogimFail이 모두 작동 안하는 듯 하다. 다음장에서 에러 고치도록 하겠다..
+
+
+![image]({{ site.baseurl }}/images/2023-06-15/20230615_185353.png)
+
+<div style="text-align:center; font-size:0.8em;">Error...</div>

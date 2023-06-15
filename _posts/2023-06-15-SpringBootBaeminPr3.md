@@ -503,7 +503,7 @@ implementation "org.springframework.boot:spring-boot-starter-security"
 
 코드를 추가하고 업데이트 후 다시 실행시켜 보면
 
-![image]({{ site.baseurl }}/images/2023-06-12/20230615_163604.png)
+![image]({{ site.baseurl }}/images/2023-06-15/20230615_163604.png)
 
 <div style="text-align:center; font-size:0.8em;">로그인화면</div>
 
@@ -514,7 +514,7 @@ implementation "org.springframework.boot:spring-boot-starter-security"
 
 콘솔창을 보면 서버가 실행될때 비밀번호가 뜨는데 Id 는 user, 비밀번호는 콘솔창에 나와있는 것을 치면 된다.
 
-![image]({{ site.baseurl }}/images/2023-06-12/20230615_163759.png)
+![image]({{ site.baseurl }}/images/2023-06-15/20230615_163759.png)
 
 <div style="text-align:center; font-size:0.8em;">콘솔</div>
 
@@ -617,7 +617,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 다시 회원가입을 해보면
 
 
-![image]({{ site.baseurl }}/images/2023-06-12/20230615_170744.png)
+![image]({{ site.baseurl }}/images/2023-06-15/20230615_170744.png)
 
 <div style="text-align:center; font-size:0.8em;">DB</div>
 

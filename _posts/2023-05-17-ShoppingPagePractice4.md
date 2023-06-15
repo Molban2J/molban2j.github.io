@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "쇼핑 페이지 예제 클론코딩4(상품등록,위지윅,Datepicker)"
+title:  "(Spring)쇼핑 페이지 예제 클론코딩4(상품등록,위지윅,Datepicker)"
 categories:
   - Spring
 ---
@@ -9,12 +9,33 @@ categories:
 
 **깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
 
-<br>
+<br><br><br>
 
 개요: 상품등록 창과 상품 관리 창 제작, 그리고 상품 등록창에서 위지윅, Datepicker 에디터 적용
 
-<br>
-<br>
+<br><br><br>
+
+## 목차
+
+* 상품 등록
+	* [상품 테이블 생성](#1-상품-테이블-생성)
+	* [카테고리 테이블 생성](#2-카테고리-테이블-생성)
+	* [데이터 삽입](#3-데이터-삽입)
+	* [VO 생성](#4-vo-생성)
+	* [Mapper 생성](#5-mapper-생성)
+	* [View 작성](#6-view-작성)
+
+	<br>
+
+* [위지윅 에디터 적용](#위지윅-에디터-적용)
+	* [사용 준비](#1-사용-준비)
+	* [Datepicker 위젯 적용](#datepicker-위젯-적용)
+	* [테스트](#테스트)
+
+	<br>
+* [내 생각](#내-생각)
+
+<br><br><br>
 
 ## 상품 등록
 

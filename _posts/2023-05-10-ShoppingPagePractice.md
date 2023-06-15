@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "쇼핑 페이지 예제 클론코딩"
+title:  "(Spring)쇼핑 페이지 예제 클론코딩"
 categories:
   - Spring
 ---
@@ -13,7 +13,21 @@ categories:
 
 **깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
 
-<br>
+<br><br><br>
+
+## 목차
+
+* [메인페이지(main.jsp)](#메인페이지mainjsp)
+* [로그인 창(login.jsp)](#로그인-창loginjsp)
+* [회원가입 창(join.jsp)](#회원가입-창joinjsp)
+* [관리자 페이지](#관리자-페이지)
+* [작가 테이블 구성, 푸터, 로고, 관리자 페이지](#작가-테이블-구성-푸터-로고-관리자-페이지)
+* [footer영역 제작](#footer영역-제작)
+* [상품, 작가 테이블 CRUD](#상품-작가-테이블-crud)
+* [각페이지 생성](#각페이지-생성)
+* [작가 CRUD](#작가-crud)
+
+<br><br><br>
 
 현재 로그인, 회원가입 기능 구현 완료
 <br> 

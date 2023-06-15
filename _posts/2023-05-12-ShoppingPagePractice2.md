@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "쇼핑 페이지 예제 클론코딩2"
+title:  "(Spring)쇼핑 페이지 예제 클론코딩2"
 categories:
   - Spring
 ---
@@ -9,7 +9,7 @@ categories:
 
 **깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
 
-<br>
+<br><br>
 
 5/12
 
@@ -18,10 +18,34 @@ categories:
 
 AuthorManage.jsp페이지에서 작가들 목록을 구현합니다. 기존 목록과 다른점은 페이징 기능이 들어간것인데, 페이징에 쓰이는 sql문과 알고리즘을 좀더 자세히 이해하고 넘어가는 것이 목표입니다.
 
+<br><br>
+
 ---
 
 <br>
+<br><br>
+
+## 목차
+
+* [작가목록 구현](#작가목록-구현)
+	* [Criteria 생성](#1-criteria-생성)
+	* [Mapper 생성](#2-mapper-생성)
+	* [Service 생성](#3-service-생성)
+	* [AuthorVO 수정](#authorvo-수정)
+	* [Controller 생성](#4-controller-생성)
+	* [View 수정](#5-view-수정)
+	* [PageVO 만들기](#6-pagevo-만들기)
+	* [전체 데이터 개수](#7-전체-데이터-개수)
+	* [View 처리](#8-view처리)
+
 <br>
+
+* [검색창 기능 구현](#검색창-기능-구현)
+	* [검색 인터페이스 추가](#1-검색-인터페이-추가authormangejsp)
+	* [검색 결과가 존재하지 않을때의 경우 설정](#2-검색-결과가-존재하지-않을때의-경우-설정)
+	
+<br>
+<br><br>
 
 먼저 기존 파일을 footer와 header를 분리해 \<include> 태그를 써줍니다.
 

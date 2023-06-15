@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "쇼핑 페이지 예제 클론코딩5(상품등록-작가선택, 카테고리 리스트)"
+title:  "(Spring)쇼핑 페이지 예제 클론코딩5(상품등록-작가선택, 카테고리 리스트)"
 categories:
   - Spring
 ---
@@ -9,7 +9,30 @@ categories:
 
 **깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
 
+<br><br><br><br>
+
+## 목차
+
+* [상품 등록 - 작가선택 팝업 창 구현](#상품등록---작가선택-팝업-창-구현)
+	* [작가 선택 버튼 추가](#1-작가-선택-버튼-추가)
+	* [mapper와 view 생성](#2-mapper와-view-생성)
+
+	<br>
+
+* [카테고리 리스트](#카테고리-리스트)
+	* [카테고리 VO 생성](#1-카테고리-vo-생성)
+	* [Mapper 생성](#2-mapper-생성)
+	* [Controller 작성](#3-controller-작성)
+	* [View에 <select>, <option> 추가](#4-view에-selectoption-추가)
+	* [스크립트 작성](#5-스크립트-작성)
+
 <br>
+
+* [상품등록 유효성검사](#상품등록-유효성검사)
+	* [View 수정](#1-view수정)
+	* [Script 작성](#2-script작성)
+	
+<br><br><br>
 
 ## 상품등록 - 작가선택 팝업 창 구현
 
@@ -342,7 +365,7 @@ pom.xml에 라이브러리 추가후 Maven Update 실행.
 
 <br>
 
-### 3. View에 \<select>/\<option> 추가
+### 4. View에 \<select>/\<option> 추가
 
 <br>
 
@@ -363,7 +386,7 @@ css도 적용해줍니다.
 <br>
 <br>
 
-### 4. 스크립트 작성
+### 5. 스크립트 작성
 
 그리고 전달 받은 JSON 데이터를 쓰기 위해 스크립트 작성.
 

@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "쇼핑 페이지 예제 클론코딩3"
+title:  "(Spring)쇼핑 페이지 예제 클론코딩3"
 categories:
   - Spring
 ---
@@ -9,7 +9,23 @@ categories:
 
 **깃허브 repository** : [shopping page practice](https://github.com/Molban2J/ShoppingPagePractice.git "github")
 
+<br><br><br>
+
+## 목차
+
+* [작가 상세보기](#작가-상세보기)
+	* [작가 상세 보기 Mapper, Service 만들기](#1-작가-상세-보기-mapper-service-만들기)
+	* [authordetail.jsp, authordetail.css생성](#2-authordetailjsp-authordetailcss생성)
+
 <br>
+
+* [작가 수정 페이지](#작가-수정-페이지)
+	* [Controller Mapping 작성](#1-controller-mapping-작성)
+	* [view.jsp 생성](#2-viewjsp-생성)
+	* [Mapper 작성](#3-mapper작성)
+	* [Controller에 PostMapping 작성](#4-controller에-postmapping-작성)
+
+<br><br><br>
 
 ## 작가 상세보기
 

@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "두번째 팀 프로젝트"
+title:  "(Project)두번째 팀 프로젝트"
 categories:
   - Java
   - Project
@@ -18,10 +18,25 @@ mvc2 패턴을 배우고, 두번째 팀 프로젝트를 진행했습니다.
 **GitHub Repository** : [github.com/Molban2J/SecondTeamProject.git](https://github.com/Molban2J/SecondTeamProject.git "github")
 
 **프로젝트 진행 기간**: 2023.04.10 ~ 2023.04.21<br>
+<br><br>
 
 ---
 
-<br>
+
+<br><br><br>
+
+## 목차
+
+* [주제선정](#주제선정)
+* [개발 환경 및 개발 스케줄](#개발-환경-및-개발-스케줄)
+* [팀원 역할](#팀원-역할)
+* [DB 명세서](#db-명세서)
+* [프로젝트 파일](#프로젝트-파일)
+* [기능 개요](#기능-개요)
+* [기능별 요구사항](#기능별-요구사항)
+* [개선사항과 느낀점](#개선사항과-느낀점)
+
+<br><br><br>
 
 ## 주제선정
 

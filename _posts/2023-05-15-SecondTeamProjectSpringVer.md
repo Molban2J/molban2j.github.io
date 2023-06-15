@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "두번째 팀 프로젝트 Spring ver"
+title: "(Project)두번째 팀 프로젝트 Spring ver"
 categories:
   - Project
   - Spring
@@ -13,18 +13,27 @@ categories:
 
 **깃허브 repository** : [second project spring .ver](https://github.com/Molban2J/SecondProjectSpringVer.git "github")
 
-<br>
+<br><br><br>
 
 개요: 기존에 만들었던 의류 쇼핑몰 팀 프로젝트의 프레임 워크를 **eclipse**에서 **spring**으로 옮기는 작업입니다. 그리고 이전에 부족했던 부분들을 보완하고 새로 배운 **ajax**를 이용해 기존 javaspcript부분들도 보완, 수정할 계획입니다.
 
-<br>
+<br><br>
 팀원: **임종민(본인)**, 박권능, 이규동, 정자윤
 
-<br>
+<br><br>
 
 기간: 2023-05-15~
 
-<br>
+<br><br><br>
+
+## 목차
+
+* [수정사항](#수정-사항)
+* [종민 - 구현/오류/수정 사항](#추가-구현)
+* [구현 모습](#구현-모습)
+* [느낀점과 개선사항](#느낀점과-개선사항)
+
+<br><br><br>
 
 ### **수정 사항**
 - 상품 페이지

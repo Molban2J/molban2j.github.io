@@ -207,6 +207,9 @@ public class UserController {
 </div>
 </details>
 
+
+
+
 <br>
 <br>
 
@@ -242,9 +245,44 @@ public class UserController {
 </div>
 ```
 
-<div style="text-align:center; font-size:0.8em;">기존 코드</div>
+<div style="text-align:center; font-size:0.8em;">수정 코드</div>
 
 > c:if 는 th:if로 바꿔 줬다. 여기서는 이미 SPRING_SECURITY_CONTEXT가 null(empty)인지 체크하고 있기 때문에 따로 null 체크를 안해줘도 된다. 그리고 th:if는 c:if와는 다르게 단독으로 못쓰이기때문에 앞에 th:block 이나 div 태그같이 다른태그를 함께 붙여준다. 또한 **c:set**은 **th:with**로 바꿔줬다. <br> 그리고 기존의 ${SPRING_SECURITY_CONTEXT.authentication.principal.user.nickname } 부분을 {#authentication.principal.user.nickname}로 바꿔줬는데, 기존 코드도 작동하겠지만 수정 후 코드는 thymeleaf에서 Spring Security에 접근할 때 더욱 간편하기 위해 **#authetication**을 사용한다고 한다.
+
+<br>
+
+**코드 수정(2023-06-15)**
+
+마이페이지에 접속하려니 오류가 나서 코드를 바꿔줬다.
+
+```html
+<div class="login_box">
+    <a th:if="${empty SPRING_SECURITY_CONTEXT }" href="/login"><span>로그인을 해주세요</span></a>
+    <div th:if="${!empty SPRING_SECURITY_CONTEXT }">
+        <div th:with="nickname=${#authentication.principal.user.nickname}"></div>
+        <a href="/user/myInfo"><span class="nickname" data-nickname=${nickname } >${nickname }</span></a>
+        <button type="button" class="logout">로그아웃</button>
+    </div>
+</div>
+```
+
+<div style="text-align:center; font-size:0.8em;">기존 코드</div>
+
+<br>
+<br>
+
+```html
+<div class="login_box">
+    <a th:if="${SPRING_SECURITY_CONTEXT == null }" href="/login"><span>로그인을 해주세요</span></a>
+    <div th:if="${SPRING_SECURITY_CONTEXT != null }">
+        <div th:with="nickname=${#authentication.principal.user.nickname}"></div>
+        <a href="/user/myInfo"><span class="nickname" data-nickname="${nickname}">${nickname }</span></a>
+        <button type="button" class="logout">로그아웃</button>
+    </div>
+</div>
+```
+
+<div style="text-align:center; font-size:0.8em;">수정 코드</div>
 
 <br>
 <br>
@@ -1508,5 +1546,31 @@ join.js 안에 주석 처리 되어있는 overlapCheck ajax함수가 있는데, 
 
 <div style="text-align:center; font-size:0.8em;">Db</div>
 
+<br>
+<br>
+<br>
+
+이제 회원가입을 해보자.
+
+라고 하려했으나 
+
+![image]({{ site.baseurl }}/images/2023-06-15/20230615_103349.png)
+
+<div style="text-align:center; font-size:0.8em;">회원가입</div>
+
+<br>
+<br>
+
+폼에 다 입력 했음에도 회원가입 버튼이 활성화 되지 않는다.
+
+유효성 검사에서 뭔가 잘못된 것 같다.
+
+코드에는 문제가 없었다!
+
+문제는 바로 경로에 있었는데, js파일을 만들때 user와 util 경로를 만들고 각각에 join.js , util.js를 넣어줘야하는데 두파일이 모두 user폴더에 있어서 그랬던 것이다... 다시 경로에 맞게 넣어줬다.
+
+![image]({{ site.baseurl }}/images/2023-06-15/20230615_105814.png)
+
+<div style="text-align:center; font-size:0.8em;">경로 확인</div>
 
 

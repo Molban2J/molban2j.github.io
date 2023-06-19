@@ -400,7 +400,7 @@ mvc2 패턴을 배우고, 두번째 팀 프로젝트를 진행했습니다.
 
 <br><br>
 
-![image]({{ site.baseurl }}/images/2023-06-19/20230619_150443.png)
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_150457.png)
 
 <div style="text-align:center; font-size:0.8em;">유저 > 내 정보수정 페이지</div>
 

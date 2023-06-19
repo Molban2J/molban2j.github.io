@@ -142,21 +142,31 @@ categories:
 
 <div style="text-align:center; font-size:0.8em;">브랜드 관리 창 ux/ui 개선</div>
 
+<br><br>
+
 ![이미지]({{ site.baseurl }}/images/20230528_175836.png)
 
 <div style="text-align:center; font-size:0.8em;">브랜드 등록 창 ux/ui 개선</div>
+
+<br><br>
 
 ![이미지]({{ site.baseurl }}/images/20230528_175940.png)
 
 <div style="text-align:center; font-size:0.8em;">이미지를 선택하면 미리보기 적용. 이미지 창을 클릭해서 등록할 수도 있고, 오른쪽 밑에 버튼으로 등록할 수도 있음. 어느 것으로 하든 서로 같은 이미지 파일을 선택한 것으로 보이게 설정</div>
 
+<br><br>
+
 ![이미지]({{ site.baseurl }}/images/20230528_180302.png)
 
 <div style="text-align:center; font-size:0.8em;">다만 등록을 완료하면 저렇게 이미지가 나오지 않는데, 서버를 껐다가 업데이트하고 다시 키면 보인다. 원인을 모르겠다...</div>
 
+<br><br>
+
 ![이미지]({{ site.baseurl }}/images/20230528_180614.png)
 
 <div style="text-align:center; font-size:0.8em;">브랜드 삭제 창 ux/ui 개선. 마우스 호버시 버튼이 보임</div>
+
+<br><br>
 
 ![이미지]({{ site.baseurl }}/images/20230528_180712.png)
 
@@ -168,6 +178,8 @@ categories:
 ![이미지]({{ site.baseurl }}/images/20230528_180930.png)
 
 <div style="text-align:center; font-size:0.8em;">옥션창 - 실시간으로 입찰가가 업데이트 된다. 그리고 상세 이미지가 자동으로 넘어가도록 설정</div>
+
+<br><br>
 
 >입찰되는 가격을 실시간으로 업데이트 하는 방법을 계속 찾아봤는데, 결론은 두가지였다. Node.js의 socket.io를 이용하여 서버와 실시간 데이터 통신을 하는 방법이 있고, Javascript의 setInterval을 통해 지정된 시간마다 ajax매서드를 실행해 지속적으로 가격을 업데이트 해주는 방법이다. <br> 전자의 방법은 아직 배우지 않아 구현에 무리가 있기에 후자의 방법을 선택했다. <br> 또한 시간이 만료되면 옥션을 종료하도록 하는 ajax매서드도 선언해줬다.
 
@@ -206,7 +218,7 @@ categories:
 
 <div style="text-align:center; font-size:0.8em;">옥션 시간이 만료되면 자동으로 옥션의 onoff값을 0(꺼짐)으로 바꿔주는 매서드</div>
 
-<br>
+<br><br>
 
 ```javascript
   if(document.frm.onOff.value != 0){
@@ -257,10 +269,14 @@ categories:
 
 <div style="text-align:center; font-size:0.8em;">옥션창 - 기간이 만료되면 자동으로 입력창이 없어진다. 그리고 마지막의 입찰한 사람이 최종 입찰자가 된다.</div>
 
+<br><br>
+
 
 ![이미지]({{ site.baseurl }}/images/20230528_182313.png)
 
 <div style="text-align:center; font-size:0.8em;">옥션 목록에 가보면 입찰자 아이디와 현재 아이디가 같으면 구매버튼이 보이고 구매 완료하면 구매완료 버튼이 보인다.</div>
+
+<br><br>
 
 > 구매 완료 기능은 auction table에 보면 endPrice가 있다. 원래는 입찰이 되면 바로 endPrice에 값을 삽입해야하지만, 구매 전까지는 삽입 하지않고 price값이 최종 가격으로 설정해놓는다. 그리고 구매를 완료하면 endPrice를 삽입하는 방식인데, 만약 endPrice == null이라면 아직 구매하지 않은 것이므로 구매버튼이 보이게 해놓고 endPrice != null이 아니라면 구매 완료버튼이 보이게  해놨다. <br><br> endPrice != null의 조건문이 어째서인지 잘 먹히지 않아서 endPrice > 0 으로 대체, 그리고 그 외 조건은 c:otherwise를 사용했다.
 
@@ -281,6 +297,8 @@ categories:
 
 <div style="text-align:center; font-size:0.8em;">최종 결제 완료 창. Status 관리자가 매출/주문관리 페이지에서 최종 결제/ 반품/ 환불 처리를 해줘야 한다.</div>
 
+<br><br>
+
 
 ![이미지]({{ site.baseurl }}/images/20230528_183344.png)
 
@@ -290,10 +308,13 @@ categories:
 
 <div style="text-align:center; font-size:0.8em;">New order list의 order number를 누르면 결제 승인 페이지가 나온다. 결제 승인을 누르면 shipment list(배송 승인)에 주문이 추가되고 shipment list페이지에서 최종 승인을 해준다.</div>
 
+<br><br>
+
 ![이미지]({{ site.baseurl }}/images/20230528_183756.png)
 
 <div style="text-align:center; font-size:0.8em;">최종 승인 모습.</div>
 
+<br><br>
 
 ---
 

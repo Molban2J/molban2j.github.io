@@ -34,6 +34,7 @@ mvc2 패턴을 배우고, 두번째 팀 프로젝트를 진행했습니다.
 * [프로젝트 파일](#프로젝트-파일)
 * [기능 개요](#기능-개요)
 * [기능별 요구사항](#기능별-요구사항)
+* [기능 구현](#기능-구현)
 * [개선사항과 느낀점](#개선사항과-느낀점)
 
 <br><br><br>
@@ -215,6 +216,8 @@ mvc2 패턴을 배우고, 두번째 팀 프로젝트를 진행했습니다.
     * 우편번호는 주소API를 이용하여 자신의 집 검색 후 자동 입력
     * 비밀번호는 영문과 숫자 조합으로 입력
     * 비밀번호는 sha256 알고리즘으로 암호화 되어 DataBase에 저장
+
+    <br><br>
   
 * **로그인**
   * 로그인을 하지 않은 경우 아래 페이지만 이용 가능
@@ -233,6 +236,8 @@ mvc2 패턴을 배우고, 두번째 팀 프로젝트를 진행했습니다.
     * 아이디와 비밀번호가 일치할 시 메인 페이지로 이동
     * 어드민 계정으로 로그인할 시 관리자 페이지 추가
 
+<br><br>
+
 * **유저**
   * 상품 장바구니 담기
   * 장바구니 상품 구매
@@ -247,6 +252,8 @@ mvc2 패턴을 배우고, 두번째 팀 프로젝트를 진행했습니다.
   * QnA 게시판 이용
     * 등록, 수정, 삭제는 어드민만 가능
 
+    <br><br>
+
 * **마이페이지**
   * 내 정보
     * 비밀번호 입력 후 수정 페이지로 이동
@@ -260,6 +267,8 @@ mvc2 패턴을 배우고, 두번째 팀 프로젝트를 진행했습니다.
     * 주문 번호 클릭 시 구매한 해당 주문 번호의 상품과 가격 등의 상세 내역을 확인
   * 내가 쓴 글
     * 자유 게시판에 작성한 나의 글 확인 및 수정, 삭제 가능
+
+    <br><br>
   
 * **관리자(어드민)**
   * 상품관리
@@ -277,15 +286,21 @@ mvc2 패턴을 배우고, 두번째 팀 프로젝트를 진행했습니다.
     * 옥션 상품 등록
       * 등록할 상품을 등록, 사이즈와 제한 시간(endtime), 시작가를 설정하여 등록함.
 
+      <br><br>
+
 * **상품**
   * 브랜드 로고 클릭 시 해당 브랜드의 모든 상품 리스트 출력
   * 카테고리 클릭 시 해당 브랜드의 카테고리가 설정된 상품 리스트 출력
   * 상품 검색 시 해당 검색어가 들어가는 상품 리스트 출력
   * 검색한 상품이 존재 하지 않을 시 “검색 결과 없음” 페이지 출력
 
+  <br><br>
+
 * **Contact**
   * Kakao지도API를 활용하여 설정한 임의의 회사 위치를 지도로 확인 가능
   * 회사의 상세 정보를 확인 가능
+
+  <br><br>
 
 * **디자인**
   * Bootstrap을 이용하여 모바일과 pc에 따른 반응형 웹으로 제작
@@ -293,6 +308,197 @@ mvc2 패턴을 배우고, 두번째 팀 프로젝트를 진행했습니다.
 
 
 ---
+
+<br><br>
+
+## 기능 구현
+
+<br><br>
+
+* 상품
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160737.png)
+
+<div style="text-align:center; font-size:0.8em;">브랜드 클릭시 모든 상품들이 정렬</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_161004.png)
+
+<div style="text-align:center; font-size:0.8em;">드롭다운 메뉴는 옷 카테고리에 따라 분류</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160826.png)
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160908.png)
+
+<div style="text-align:center; font-size:0.8em;">검색 결과/ 결과 없을 시</div>
+
+<br><br>
+
+* 회원가입
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_153033.png)
+
+<div style="text-align:center; font-size:0.8em;">회원가입 > 아이디 중복검사</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_145036.png)
+
+<div style="text-align:center; font-size:0.8em;">회원가입 > 주소록 api를 통해 주소 입력</div>
+
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_145453.png)
+
+<div style="text-align:center; font-size:0.8em;">회원가입 > SHA256을 통해 비밀번호를 암호화하여 저장</div>
+
+
+<br><br>
+
+* 로그인
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_153016.png)
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_153001.png)
+
+<div style="text-align:center; font-size:0.8em;">계정 정보가 올바르게 입력되지 않았을 때</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_153231.png)
+
+<div style="text-align:center; font-size:0.8em;">로그인 후 접근이 필요한 페이지면 경고창을 띄우고 창이 넘어가지 않음</div>
+
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_152910.png)
+
+<div style="text-align:center; font-size:0.8em;">일반 회원으로 로그인 시</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_153509.png)
+
+<div style="text-align:center; font-size:0.8em;">관리자로 로그인 시</div>
+
+<br><br>
+
+* 유저
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_153404.png)
+
+<div style="text-align:center; font-size:0.8em;">유저로 내 정보수정 페이지 접근시 2차 확인</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_150443.png)
+
+<div style="text-align:center; font-size:0.8em;">유저 > 내 정보수정 페이지</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_154511.png)
+
+<div style="text-align:center; font-size:0.8em;">장바구니</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_155200.png)
+
+<div style="text-align:center; font-size:0.8em;">결제화면(50% 축소 화면) / 약관 동의 후 결제 api로 이동</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_155221.png)
+
+<div style="text-align:center; font-size:0.8em;">결제 api. 아직 제데로된 연동이 안되었기 때문에 결제 취소후 결제 실패 메세지가 뜨면 결제 완료 창으로 넘어가도록 설계</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_155601.png)
+
+<div style="text-align:center; font-size:0.8em;">결제 완료 화면</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_155641.png)
+
+<div style="text-align:center; font-size:0.8em;">유저 > MyPage > 주문내역. status는 어드민이 주문관리에서 주문 처리에 따라 바뀜</div>
+
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_155820.png)
+
+<div style="text-align:center; font-size:0.8em;">게시판 등록</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_155904.png)
+
+<div style="text-align:center; font-size:0.8em;">유저 > MyPage > 내가 쓴 글</div>
+
+<br><br>
+
+* 관리자
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160036.png)
+
+<div style="text-align:center; font-size:0.8em;">관리자 > 상품관리</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160117.png)
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160139.png)
+
+<div style="text-align:center; font-size:0.8em;">관리자 > 브랜드 관리/ 등록</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160224.png)
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160304.png)
+
+<div style="text-align:center; font-size:0.8em;">관리자 >상품 관리/ 등록</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160345.png)
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160430.png)
+
+<div style="text-align:center; font-size:0.8em;">관리자 >회원 관리/ 수정</div>
+
+<br><br>
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160507.png)
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_160554.png)
+
+<div style="text-align:center; font-size:0.8em;">관리자 >옥션 등록 / 사이즈, 시작가격, 경매 기간 설정</div>
+
+<br><br>
+
+* Contact
+
+![image]({{ site.baseurl }}/images/2023-06-19/20230619_161109.png)
+
+<div style="text-align:center; font-size:0.8em;">카카오 지도 api 사용</div>
+
+
+<br><br><br><br>
 
 ## 개선사항과 느낀점 
 

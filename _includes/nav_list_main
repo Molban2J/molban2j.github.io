@@ -52,7 +52,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "CodingTest" %}
-                        <li><a href="/categories/spring" class="">코딩 테스트({{category[1].size}})</a></li>
+                        <li><a href="/categories/codingtest" class="">코딩 테스트({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

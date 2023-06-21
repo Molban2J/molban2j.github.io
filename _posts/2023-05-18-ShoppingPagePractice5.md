@@ -23,7 +23,7 @@ categories:
 	* [카테고리 VO 생성](#1-카테고리-vo-생성)
 	* [Mapper 생성](#2-mapper-생성)
 	* [Controller 작성](#3-controller-작성)
-	* [View에 <select>, <option> 추가](#4-view에-selectoption-추가)
+	* [View에 select, option 추가](#4-view에-selection-추가)
 	* [스크립트 작성](#5-스크립트-작성)
 
 <br>

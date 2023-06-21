@@ -2,7 +2,7 @@
 layout: single
 title:  "(Project)두번째 팀 프로젝트"
 categories:
-  - Java
+  - JavaPr
   - Project
 ---
 

@@ -2,7 +2,7 @@
 layout: single
 title:  "(SpringBoot) 게시판 예제"
 categories:
-  - Springboot
+  - SpringBoot
 ---
 
 <br>

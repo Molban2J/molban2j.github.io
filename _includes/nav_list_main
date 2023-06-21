@@ -47,6 +47,15 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+
+        <span class="nav__sub-title">Coding Test</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "CodingTest" %}
+                        <li><a href="/categories/spring" class="">코딩 테스트({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
             
         </li>
 

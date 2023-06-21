@@ -78,7 +78,7 @@ public class Test{
 <br>
 <br>
 
-두번째 시도
+세번째 시도
 
 ```java
 public class Main{

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "(Coding Test) 1단계 - 입출력과 사칙연산(2557, 1000, )"
+title: "(Coding Test) 1단계 - 입출력과 사칙연산"
 categories:
   - CodingTest
 ---

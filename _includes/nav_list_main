@@ -51,7 +51,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "JavaPr" %}
-                        <li><a href="/categories/java" class="">Java(Eclipse) 예제({{category[1].size}})</a></li>
+                        <li><a href="/categories/javapr" class="">Java(Eclipse) 예제({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

@@ -19,6 +19,14 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <span class="nav__sub-title">Java</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Java" %}
+                        <li><a href="/categories/java" class="">Java({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
         <span class="nav__sub-title">SpringBoot</span>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
@@ -27,7 +35,7 @@
                 <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
                 {% for category in site.categories %}
                     {% if category[0] == "SpringBoot" %}
-                        <li><a href="/categories/springboot" class="">Spring Boot 예제({{category[1].size}})</a></li>
+                        <li><a href="/categories/springboot" class="">Spring Boot(IntelliJ) 예제({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -35,15 +43,15 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Spring" %}
-                        <li><a href="/categories/spring" class="">Spring 예제({{category[1].size}})</a></li>
+                        <li><a href="/categories/spring" class="">Spring(sts) 예제({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
-            <span class="nav__sub-title">Java(eclipse)</span>
+            <span class="nav__sub-title">Eclipse</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Java" %}
-                        <li><a href="/categories/java" class="">Java Eclipse({{category[1].size}})</a></li>
+                    {% if category[0] == "JavaPr" %}
+                        <li><a href="/categories/java" class="">Java(Eclipse) 예제({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

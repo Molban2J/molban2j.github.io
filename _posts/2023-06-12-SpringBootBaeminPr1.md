@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "(SpringBoot) 배민 클론 코딩"
+title: "(SpringBoot) 배민 클론 코딩 - 프로젝트 생성, 메인페이지"
 categories:
   - SpringBoot
 ---

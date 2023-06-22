@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "(SpringBoot) 배민 클론 코딩3"
+title: "(SpringBoot) 배민 클론 코딩3 - 테이블, 스프링시큐리티"
 categories:
   - SpringBoot
 ---

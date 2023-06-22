@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "(SpringBoot) 배민 클론 코딩2"
+title: "(SpringBoot) 배민 클론 코딩2 - 마이페이지, 로그인페이지, 회원가입"
 categories:
   - SpringBoot
 ---

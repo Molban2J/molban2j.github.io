@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "(SpringBoot) 배민 클론 코딩4"
+title: "(SpringBoot) 배민 클론 코딩4-스프링시큐리티 오류"
 categories:
   - SpringBoot
 ---
@@ -17,12 +17,6 @@ categories:
 이전 포스팅에서 이어진다.
 
 <br>
-<br>
-<br>
-<br>
-
-## 목차
-
 
 <br>
 <br>

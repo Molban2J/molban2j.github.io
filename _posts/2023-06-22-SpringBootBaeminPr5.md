@@ -860,7 +860,7 @@ public class StoreDAOImp implements StoreDAO {
 <br>
 <br>
 
-그리고 쿼리문을 실행할 Mapper도 생성해줍니다.
+그리고 쿼리문을 실행할 Mapper도 생성해준다.
 
 
 <br>
@@ -881,7 +881,7 @@ public interface StoreMapper {
 <br>
 <br>
 
-아직 관리자 페이지가 없기 때문에 예시 데이터를 임시로 넣어줍니다.
+아직 관리자 페이지가 없기 때문에 예시 데이터를 임시로 넣어준다.
 
 <br>
 <br>

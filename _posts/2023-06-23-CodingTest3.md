@@ -144,7 +144,7 @@ public class Main {
 
 <br>
 
-[String과 StringBuilder](https://github.com/Molban2J/Baemin.git "github")
+[String과 StringBuilder](https://molban2j.github.io/java/StringBuilder/ "github")
 
 <br>
 

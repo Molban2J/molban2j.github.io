@@ -19,14 +19,15 @@ categories:
 
 ## 목차
 
-* [HTML, CSS, JS파일 추가](#html-css-js파일-추가)
 * [Controller, DTO, DAO, Service, Mapper 생성](#controller-dto-dao-service-mapper-생성)
+* [HTML, CSS, JS파일 추가](#html-css-js파일-추가))
+
 
 <br>
 <br>
 <br>
 
-## 매장 상세 페이지
+## Controller, DTO, DAO, Service, Mapper 생성
 
 <br>
 <br>
@@ -165,6 +166,8 @@ public class StoreDAOImpl implements StoreDAO {
 <br>
 <br>
 <br>
+
+## HTML, CSS, JS파일 추가
 
 이제 view와 css, js설정을 해준다.
 

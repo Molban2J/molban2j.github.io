@@ -24,7 +24,7 @@ A와 B 두 문자열을 연결하게 되면 새로운 C 문자열 객체를 생�
 
 **StringBuilder** 객체를 생성 후, **.append**를 통해서 문자열을 뒤에다가 계속 연결시켜주면 된다.
 
-다만, 주의해야할 점은 StringBuilder를 바로 String 객체로 저장할 수 없다는 점이다. **toString**으로 변환해서 저장해줘야한다.
+다만, 주의해야할 점은 StringBuilder를 바로 String 객체로 저장할 수 없다는 점이다. **toString**으로 변환해서 저장해줘야한다. 
 
 
 ```java

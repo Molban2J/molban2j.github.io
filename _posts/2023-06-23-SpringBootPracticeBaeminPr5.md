@@ -1718,10 +1718,9 @@ $(document).ready(function() {
 
 ```html
 
-<div id="wrap">
+<div id="wrap" th:with="info=${store.storeInfo}">
     <nav>
-        <th:block th:with="info=${store.storeInfo}"></th:block>
-        <h1 id="store_name" data-store_name="${info.storeName }" >${info.storeName }</h1>
+        <h1 id="store_name" data-store_name="${info.storeName }" th:text="${info.storeName }"></h1>
         <!-- <div id="is_open" data-is_open="${store.storeInfo.isOpen }"></div> -->
         <div class="inf">
             <div>
@@ -1746,9 +1745,9 @@ $(document).ready(function() {
                 <span>사장님 댓글 0</span>
             </div>
 
-            <div id="min_delevery" data-min_delevery="${info.minDelevery }"><span th:text="'최소주문금액'+${#numbers.formatInteger(store.storeInfo?.minDelevery,0,'COMMA')}+'원'"></span></div>
-            <div><span th:text="'예상 배달시간 '+${store.storeInfo?.deleveryTime  }+'분'"></span></div>
-            <div id="delevery_tip" data-delevery_tip="${info.deleveryTip }"><span th:text="'배달팁'+${#numbers.formatInteger(store.storeInfo?.deleveryTip,0,'COMMA')}+'원'"></span></div>
+            <div id="min_delevery" data-min_delevery="${info.minDelevery }"><span th:text="'최소주문금액'+${#numbers.formatInteger(info.minDelevery,0,'COMMA')}+'원'"></span></div>
+            <div><span th:text="'예상 배달시간 '+${info.deleveryTime  }+'분'"></span></div>
+            <div id="delevery_tip" data-delevery_tip="${info.deleveryTip }"><span th:text="'배달팁'+${#numbers.formatInteger(info.deleveryTip,0,'COMMA')}+'원'"></span></div>
         </div>
     </nav>
 
@@ -1842,7 +1841,6 @@ $(document).ready(function() {
 <input type="hidden" value="${info.closingTime }" id="store_closing_time">
 
 <input type="hidden" value="${BMaddress.address2 }" id="delevery_address">
-
 ```
 
 <div style="text-align:center; font-size:0.8em;">storeDetail.html</div>
@@ -1851,9 +1849,9 @@ $(document).ready(function() {
 
 #numbers.formatInteger로 숫자를 형식화 해줬고 윗부분 주석부분을 보면 조건에따라 class가 바뀌어야하므로 **th:class**를 사용해줬다. 
 
-> 기존 코드는 
+> ~~기존 코드는~~
 
-```html
+```
   <div id="min_delevery" data-min_delevery="${info.minDelevery }"><span th:text="'최소주문금액'+${#numbers.formatInteger(info.minDelevery,0,'COMMA')}+'원'"></span></div>
             <div><span th:text="'예상 배달시간 '+${info.deleveryTime  }+'분'"></span></div>
             <div id="delevery_tip" data-delevery_tip="${info.deleveryTip }"><span th:text="'배달팁'+${#numbers.formatInteger(info.deleveryTip,0,'COMMA')}+'원'"></span></div>
@@ -1863,18 +1861,48 @@ $(document).ready(function() {
 
 <br>
 
-${info.deleveryTime}인데, info값을 전달해주고있지 않아서 에러가난다.
-${store.storeInfo.deleveryTime}으로 바꿔준다
+~~\${info.deleveryTime}인데, info값을 전달해주고있지 않아서 에러가난다.
+\${store.storeInfo.deleveryTime}으로 바꿔준다~~
 
 <br>
 
-```html
+```
   <div id="min_delevery" data-min_delevery="${info.minDelevery }"><span th:text="'최소주문금액'+${#numbers.formatInteger(store.storeInfo?.minDelevery,0,'COMMA')}+'원'"></span></div>
             <div><span th:text="'예상 배달시간 '+${store.storeInfo?.deleveryTime  }+'분'"></span></div>
             <div id="delevery_tip" data-delevery_tip="${info.deleveryTip }"><span th:text="'배달팁'+${#numbers.formatInteger(store.storeInfo?.deleveryTip,0,'COMMA')}+'원'"></span></div>
 ```
 
 <div style="text-align:center; font-size:0.8em;">수정코드</div>
+
+<br>
+
+<br>
+
+> **수정**<br> 내가 착각했었다. 위 방식으로 해도 되지만, 코드의 제일 윗부분을 보면 **th:with**를 사용해서 info변수를 정의해주고 있다. 다만 저 변수는 해당 태그 범위 내에서만 유효하기 때문에 전체를 감싸주는 첫 div태그 안에 선언해준다. 그리고 store.storeInfo부분을 다시 info로 바꿔준다.
+
+<br>
+
+```html
+<div id="wrap">
+    <nav>
+        <th:block th:with="info=${store.storeInfo}"></th:block>
+```
+
+<div style="text-align:center; font-size:0.8em;">기존코드</div>
+
+
+<br>
+<br>
+
+
+```html
+<div id="wrap" th:with="info=${store.storeInfo}">
+    <nav>
+        <h1 id="store_name" data-store_name="${info.storeName }" th:text="${info.storeName }"></h1>
+```
+
+<div style="text-align:center; font-size:0.8em;">수정코드</div>
+
 
 </div>
 </details>
@@ -1885,4 +1913,14 @@ ${store.storeInfo.deleveryTime}으로 바꿔준다
 
 ![image]({{ site.baseurl }}/images/2023-06-23/20230623_131538.png)
 
-<div style="text-align:center; font-size:0.8em;">상세화면</div>
+<div style="text-align:center; font-size:0.8em;">상세화면(음식점이름이 이상하다)</div>
+
+
+
+<br>
+<br>
+<br>
+
+![image]({{ site.baseurl }}/images/2023-06-23/20230623_144211.png)
+
+<div style="text-align:center; font-size:0.8em;">상세화면(수정완료)</div>

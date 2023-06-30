@@ -557,7 +557,69 @@ class Main{
 <div style="text-align:center; font-size:0.8em;">런타임에러</div>
 
 <br>
+
 <br>
+
+
+```java
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class Main{
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input;
+        while((input = br.readLine()) != null){
+            StringTokenizer st = new StringTokenizer(input, " ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            System.out.println(a+b);
+        }
+    }
+}
+```
+
+<div style="text-align:center; font-size:0.8em;">정답</div>
+
+<br>
+<br>
+
+|**메모리**|**시간**|
+|:--:|:--:|
+|14128 KB|132 ms|
+
+
+<br>
+
+<br>
+
+
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+ 
+public class Main {
+	public static void main(String args[]) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		String str;
+ 
+		while( (str=br.readLine()) != null ){
+		    
+			int a = str.charAt(0) - 48;
+			int b = str.charAt(2) - 48;
+			sb.append(a+b).append("\n");
+		
+		}
+		System.out.print(sb);
+	}
+}
+```
+
+<div style="text-align:center; font-size:0.8em;">모범 답안</div>
+
 <br>
 <br>
 <br>

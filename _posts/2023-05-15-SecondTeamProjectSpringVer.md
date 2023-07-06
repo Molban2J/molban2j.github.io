@@ -28,9 +28,33 @@ categories:
 
 ## 목차
 
+* [주제선정](#주제선정)
+* [개발 환경 및 스케줄](#개발-환경-및-개발-스케줄)
+* [팀원 역할](#팀원-역할)
+* [DB명세서](#db-명세서)
 * [수정사항](#수정-사항)
 * [종민 - 구현/오류/수정 사항](#추가-구현)
-* [구현 모습](#구현-모습)
+* [기능 구현 모습](#기능-구현-모습)
+	* [회원가입](#회원-가입)
+	* [로그인/로그아웃](#로그인--로그아웃)
+	* [회원 정보수정 / 탈퇴](#회원-정보수정--탈퇴)
+	* [상품 목록](#상품-목록)
+	* [장바구니](#장바구니)
+	* [결제](#결제)
+	* [옥션](#옥션)
+	* [쿠폰발급](#쿠폰-발급)
+	* [게시글 등록](#게시글-등록)
+	* [게시글 댓글](#게시글-댓글)
+	* [게시글 수정](#게시글-수정)
+	* [내 게시글](#내-게시글)
+	* [게시판 검색](#게시판-검색)
+	* [(관리자) 회원관리](#관리자-회원관리)
+	* [(관리자) 브랜드 관리](#관리자-브랜드-관리)
+	* [(관리자) 판매 관리](#관리자-판매-관리)
+	* [(관리자) 상품관리](#관리자-상품관리)
+	* [구매목록](#구매목록)
+	* [로그인이 필요한 기능](#로그인이-필요한-기능)
+*	[기능 / 코드리뷰](#코드--기능-리뷰)
 * [느낀점과 개선사항](#느낀점과-개선사항)
 
 <br><br><br>
@@ -218,77 +242,121 @@ categories:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fM50eE31070" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<br><br>
+
 ### 로그인 / 로그아웃
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0S9vZJzjBls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### 회원 탈퇴
+<br><br>
+
+### 회원 정보수정 / 탈퇴
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TrFCOeXVxmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br><br>
 
 ### 상품 목록
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YI7knADA_yY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<br><br>
+
 ### 장바구니
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DyjE964-CpA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br><br>
 
 ### 결제
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1wpDJ4CL9ls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<br><br>
+
 ### 옥션
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BemOwc-uNa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br><br>
 
 ### 쿠폰 발급
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Si61CZ2l4ec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<br><br>
+
 ### 게시글 등록
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mg-1-IdUmzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br><br>
 
 ### 게시글 댓글
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zH6nbtQrMZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<br><br>
+
 ### 게시글 수정
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yQFa3W8dONA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br><br>
 
 ### 내 게시글
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ULISfiHhWfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<br><br>
+
 ### 게시판 검색
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ddMjSoJ92GE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br><br>
 
 ### 관리자: 회원관리
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/56PG2QZNfTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<br><br>
+
 ### 관리자: 브랜드 관리
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0MrN70L04RU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br><br>
 
 ### 관리자: 판매 관리
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vlL-sx4mSVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<br><br>
+
 ### 관리자: 상품관리
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/goGi_zaSpc4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br><br>
 
 ### 구매목록
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/cUDvLWrAwe0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<br><br>
+
 ### 로그인이 필요한 기능
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ts8fyORtW28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+<br><br><br>
+
+## 코드 / 기능 리뷰
+
+<details>
+<summary class="summary-text">브랜드 등록 ---->접기/펼치기<</summary>
 
 ### 브랜드 등록
 
@@ -326,8 +394,12 @@ categories:
 
 <div style="text-align:center; font-size:0.8em;">회원 관리 창 ux/ui 개선. 페이징 적용과 검색기능 추가</div>
 
+</details>
 
 ---
+
+<details>
+<summary class="summary-text">옥션 ---->접기/펼치기<</summary>
 
 ![이미지]({{ site.baseurl }}/images/20230528_180930.png)
 
@@ -469,6 +541,8 @@ categories:
 <div style="text-align:center; font-size:0.8em;">최종 승인 모습.</div>
 
 <br><br>
+
+</details>
 
 ---
 

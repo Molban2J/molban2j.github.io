@@ -79,14 +79,14 @@ categories:
 ## 개발 환경 및 개발 스케줄
 <br>
 
-**개발 환경**
-  * Eclipe
-  * MySQL
-  * Javascript
-  * HTML
-  * CSS
-  * Bootstrap
-  * KakaoMap API
+|개발환경|상세|
+|:--:|:--|
+|언어| - Java<br> - Javascript<br> - SQL<br> - HTML<br> - CSS<br>|
+|Front-end|- Bootstrap <br> - jQuery|
+|Back-end| - Spring<br> - Mybatis<br> - Apache Tomcat |
+|DB| - Oracle|
+|Tool| - Sts4|
+|Open API| - KakoMap API<br> - CK Editor<br> - i'mport<br> -Disqus
 
 
   <br>

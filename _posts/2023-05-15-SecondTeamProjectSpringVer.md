@@ -15,7 +15,7 @@ categories:
 
 <br><br><br>
 
-개요: 기존에 만들었던 의류 쇼핑몰 팀 프로젝트의 프레임 워크를 **eclipse**에서 **spring**으로 옮기는 작업입니다. 그리고 이전에 부족했던 부분들을 보완하고 새로 배운 **ajax**를 이용해 기존 javaspcript부분들도 보완, 수정할 계획입니다.
+개요: 기존에 만들었던 의류 쇼핑몰 팀 프로젝트의 프레임 워크를 **spring(sts4)**으로 옮기는 작업입니다. 그리고 이전에 부족했던 부분들을 보완하고 새로 배운 **ajax**를 이용해 기존 javaspcript부분들도 보완, 수정할 계획입니다.
 
 <br><br>
 팀원: **임종민(본인)**, 박권능, 이규동, 정자윤
@@ -35,14 +35,94 @@ categories:
 
 <br><br><br>
 
+## 주제선정
+
+![_config.yml]({{ site.baseurl }}/images/graph.png)
+
+현재 대한민국의 주 소비층은 MZ 세대로 대부분의 기업들은 이미 MZ세대를 타겟으로 하여 마케팅을 하고 있습니다.
+현재 명품시장은 세계적으로 매해 조금씩 성장하고 있는 추세며 2021년 기준으로  세계 성장률 13%, 우리나라는 5% 성장함을 그래프로 볼 수 있습니다.
+
+![_config.yml]({{ site.baseurl }}/images/graph2.png)
+
+다음 그래프를 보시더라도 명품 매출은 매년 증가하고 있으며 그 중의 2030세대(이하MZ)의 비중은 나날이 증가하고 있습니다.
+이러한 시장의 흐름에 발 맞추어 사용량이 많은 명품 쇼핑몰을 주제로 JSP 쇼핑몰을 만들었습니다.
+<br>
+추가로 다른 쇼핑몰과의 차별점을 주고자 좀 더 젊은 세대에게 흥미를 유발하고 접근성을 향상시키기 위해 hotdeal과 auction기능 을 추가했습니다.
+
+---
+<br>
+
+## 개발 환경 및 개발 스케줄
+<br>
+
+**개발 환경**
+  * Eclipe
+  * MySQL
+  * Javascript
+  * HTML
+  * CSS
+  * Bootstrap
+  * KakaoMap API
+
+
+  <br>
+
+**개발 스케줄**
+<br>
+
+|날짜|일정|
+|:--:|:--|
+|2023.04.10 ~ 2023.04.11|- 주제 선정 <br> -구체적인 개발 방향 탐색(페이지 및 기능 구성 등) <br> - 데이터베이스 설계<br> - 역할 분담|
+|2023.04.12 ~ 2023.04.14|- 데이터 베이스 구축<br> - 각자 맡은 페이지의 대략적 구조 제작 <br> - 각자 브랜드 정해서 데이터 수집<br> - 페이지의 전체적 테마 설정/ 부트스트랩 지정|
+|2023.04.15 ~ 2023.04.19|- 각자 맡은 페이지 상세 제작/ 부트스트랩, CSS 적용<br> - 각 페이지 기능 구현(회원가입, 주문, 장바구니, 핫딜, 옥션 등)<br> - 추가 기능 구상 및 오류 수정<br> - 틈틈히 팀원들 간 코드 병합|
+|2023.04.19 ~ 2023.04.21|- 코드 전체 병합<br> -기능 테스트<br> - 디테일 수정 및 확립<br> - 오류 수정 <br> - 발표|
+|2023.05.15~| -기능 및 취약점 보완<br> - 디테일 수정<br> -미구현된 기능들 추가|
+
+---
+<br>
+<br>
+
+## 팀원 역할
+
+|이름|역할|
+|:--:|:--|
+|**임종민(본인)**| - 관리자 페이지 제작<br> - 브랜드, 상품관리<br> - 회원관리<br> - 옥션 등록<br> - 자유게시판 관리 <br> - 경매 페이지 제작, 기능 구현<br> - 파일 통합 및 배포|
+|박권능|- 로그인, 회원가입 페이지 제작, 기능구현<br> - 유효성 검사 스크립트 삽입<br> - KakaoMap API<br> - 결제 API 삽입<br> - 게시판 페이징 처리 <br> - Contact페이지<br>|
+|이규동|-핫 딜 제작, 기능구현<br> - 게시판, 상품 페이지 제작<br> -상품(로고, 카테고리, 검색)리스트 구현 <br> -관리자 페이지의 QnA게시판 관리, 매출 관리 구현 <br>- 파일 통합 및 배포<br> - ppt발표 <br>|
+|정자윤|-데이터 베이스 제작, 수정, 업데이트<br> - 장바구니 제작, 구현 <br> - ppt작성 <br> - 마이페이지 주문내역 구현|
+
+---
+
+<br>
+
+## DB 명세서
+
+![db명세서 이미지]({{ site.baseurl }}/images/20230706_115246.png)
+
+![db명세서 이미지]({{ site.baseurl }}/images/user.png)
+
+![db명세서 이미지]({{ site.baseurl }}/images/product.png)
+
+![db명세서 이미지]({{ site.baseurl }}/images/cart.png)
+
+![db명세서 이미지]({{ site.baseurl }}/images/qna.png)
+
+![db명세서 이미지]({{ site.baseurl }}/images/free.png)
+
+![db명세서 이미지]({{ site.baseurl }}/images/auction.png)
+
+![db명세서 이미지]({{ site.baseurl }}/images/20230706_115348.png)
+
+---
+
 ### **수정 사항**
 - 상품 페이지
-    - 상품 사진 여러장 첨부
+    - 상품 사진 여러장 첨부	
     - 상품상세보기 페이지
     - 상품페이지 페이징처리 ----- 구현완료
 
 - 어드민 관리자 페이지 수정      
-    - 브랜드 등록시 상품등록 페이지에도 반영
+    - 브랜드 등록시 상품등록 페이지에도 반영	----- 구현완료
     - 회원관리 페이지, 브랜드 관리 페이지 디자인 수정  ----- 구현완료
 
 - 경매 타임세일 수정
@@ -53,23 +133,15 @@ categories:
       - 실시간 입찰가 업데이트 되도록 설정 ----- 구현완료
     - 타임세일 
       - 관리자가 할인율과 시간을 정할수있게 ----- 구현완료
-      - javax로 구현
+      - ajax로 구현
 
 
 - 브랜드 추가시 리스트에 추가
 - (카테고리, 메인로고) 이에 따른 상품 등록시 상품 브랜드에 자동추가  ----- 구현완료
 
-- 상품 필터 높은가격순 낮은 가격순 
-
-- 구글 네이버 로그인 
-
-- 찜하기기능
-
 - 장바구니 뱃지  ----- 구현완료
 
 - 장바구니 삭제버튼 & 수량 변동 ----- 구현완료
-
-- 상품 구매시 재고량의 변동 (balance를 cart 가아니라 order에 넣어서 구매시에 product balance 를 구매한 만큼 줄여야할듯)
 
 - 상품 구매시 가격에 따른 회원포인트 지급 ----- 구현완료
 - 누적 포인트에 따른 회원등급 조정 ----- 구현완료
@@ -107,6 +179,9 @@ categories:
   - Spring framework에서의 파일 업로드 구현
   - 브랜드 이미지 파일 등록할 때 미리보기 구현(수정 완료)
   - 브랜드 이미지 파일 등록 버튼이 두개인데, 한쪽에서 이미지 파일을 선택하면 다른쪽에서도 동일한 값을 집어넣도록 구현
+
+	<br>
+
 ### 수정
 
 - 옥션
@@ -134,7 +209,86 @@ categories:
 
 ---
 
-## 구현 모습
+## 기능 구현 모습
+
+<br>
+<br>
+
+### 회원 가입
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fM50eE31070" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 로그인 / 로그아웃
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0S9vZJzjBls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 회원 탈퇴
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TrFCOeXVxmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 상품 목록
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YI7knADA_yY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 장바구니
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DyjE964-CpA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 결제
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1wpDJ4CL9ls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 옥션
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BemOwc-uNa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 쿠폰 발급
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Si61CZ2l4ec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 게시글 등록
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mg-1-IdUmzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 게시글 댓글
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zH6nbtQrMZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 게시글 수정
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yQFa3W8dONA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 내 게시글
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ULISfiHhWfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 게시판 검색
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ddMjSoJ92GE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 관리자: 회원관리
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/56PG2QZNfTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 관리자: 브랜드 관리
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0MrN70L04RU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 관리자: 판매 관리
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vlL-sx4mSVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 관리자: 상품관리
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/goGi_zaSpc4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 구매목록
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cUDvLWrAwe0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 로그인이 필요한 기능
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ts8fyORtW28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### 브랜드 등록
 

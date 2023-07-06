@@ -242,6 +242,8 @@ categories:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fM50eE31070" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+- E-mail sender를 통해 이메일 인증을 받아야 회원가입 가능
+
 <br><br>
 
 ### 로그인 / 로그아웃
@@ -253,6 +255,8 @@ categories:
 ### 회원 정보수정 / 탈퇴
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TrFCOeXVxmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+- 비밀번호 재 확인 후 유저 정보 변경가능
 
 <br><br>
 
@@ -266,11 +270,15 @@ categories:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DyjE964-CpA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+- 수량이 1 밑으로 내려가면 알림창이 뜨면서 삭제 되도록 설정
+
 <br><br>
 
 ### 결제
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1wpDJ4CL9ls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+- 아임포트 스크립트를 가져와 사용. 실제 결제는 안됨. 취소를 누르면 결제 완료 창으로 이동.
 
 <br><br>
 
@@ -278,11 +286,15 @@ categories:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BemOwc-uNa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+-마지막 입찰한 사람이 낙찰자가 되는 시스템. 현재는 현재 입찰가보다 낮은 가격으로는 입찰하지 못하도록 스크립트 설정을 해둠.
+
 <br><br>
 
 ### 쿠폰 발급
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Si61CZ2l4ec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+- 등급에 따른 쿠폰 발급. 이미 발급받거나 등급이 맞지 않으면 발급이 제한됨.
 
 <br><br>
 
@@ -326,11 +338,15 @@ categories:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0MrN70L04RU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+- 브랜드 등록을 하면 이미지가 제데로 보이지 않는 문제가 발생. 비동기 통신으로 이미지를 불러오는 방식으로 해결.
+
 <br><br>
 
 ### 관리자: 판매 관리
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vlL-sx4mSVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+- 주문 목록이 뜨고, 주문 상태를 배송 중, 취소 중 등으로 바꿀 수 있음.
 
 <br><br>
 
@@ -350,6 +366,7 @@ categories:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ts8fyORtW28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+- 로그인이 필요한 기능에 로그인 하지않은 유저가 접근할 때 차단
 
 <br><br><br>
 

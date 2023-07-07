@@ -13,6 +13,9 @@ categories:
 
 **깃허브 repository** : [second project spring .ver](https://github.com/Molban2J/SecondProjectSpringVer.git "github")
 
+
+**Youtube** : [DiamondBlack](https://www.youtube.com/playlist?list=PLSMFAJ9suasYC-2eNPQ6n9BN-vh73d91p "github")
+
 <br><br><br>
 
 개요: 기존에 만들었던 의류 쇼핑몰 팀 프로젝트의 프레임 워크를 **spring(sts4)**으로 옮기는 작업입니다. 그리고 이전에 부족했던 부분들을 보완하고 새로 배운 **ajax**를 이용해 기존 javaspcript부분들도 보완, 수정할 계획입니다.

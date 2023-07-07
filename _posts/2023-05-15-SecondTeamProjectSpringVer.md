@@ -373,10 +373,7 @@ categories:
 
 <br><br><br>
 
-## 코드 / 기능 리뷰
-
-<details>
-<summary class="summary-text">브랜드 등록 ---->접기/펼치기<</summary>
+## 코드 / 기능 
 
 ### 브랜드 등록
 
@@ -414,12 +411,9 @@ categories:
 
 <div style="text-align:center; font-size:0.8em;">회원 관리 창 ux/ui 개선. 페이징 적용과 검색기능 추가</div>
 
-</details>
 
 ---
 
-<details>
-<summary class="summary-text">옥션 ---->접기/펼치기<</summary>
 
 ![이미지]({{ site.baseurl }}/images/20230528_180930.png)
 

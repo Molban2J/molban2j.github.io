@@ -302,3 +302,105 @@ class Main{
 <br>
 
 <br>
+
+```java
+import java.io.*;
+
+class Main{
+    public static void main(String args[]) throws IOException{
+        StringBuilder sb = new StringBuilder();
+        int a[] = new int[9];
+        int max = 0;
+        int index = 0;
+        for(int j = 0; j<9; j++){
+            a[j] = read();
+        }
+        for(int i=0;i<9;i++){
+            if(max<a[i]){
+                max = a[i];
+                index = i+1;
+            }
+        }
+        
+        sb.append(max).append("\n").append(index);
+        System.out.println(sb);
+    }
+    
+    private static int read() throws IOException{
+        boolean sign = true;
+        int a = 0;
+        while(true){
+            int num = System.in.read();
+            if(num == '\n'){
+                return a;
+            } else {
+                a = (a*10)+(num-'0');
+            }
+        }
+    }
+}
+```
+
+<div style="text-align:center; font-size:0.8em;">정답</div>
+
+<br>
+<br>
+
+|**메모리**|**시간**|
+|:--:|:--:|
+|14088 KB|120 ms|
+
+<br>
+<br>
+
+문제는 read()함수 때문이었다... boolean계산하는 것이 반대로 되어있었기 때문에 계속 부호가 반대로 입력 됐던것이다. 사실 문제에는 자연수가 입력된다고 나와있기 때문에 애초에 음수 정수 판별이 필요없어서 조건문을 생략해버렸다.
+
+<br>
+<br>
+
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+class Main {
+	public static void main(String[] args) throws NumberFormatException, IOException{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		for (int i = 0; i < 9; i++) {
+			list.add(Integer.parseInt(br.readLine()));
+		}
+		
+ 		int max = list.get(0);
+		
+		for (int j = 1; j < list.size(); j++) {
+			if(list.get(j) > max)
+				max = list.get(j);
+		}
+		
+		System.out.println(max);
+		System.out.println(list.indexOf(max) + 1);
+		
+	}
+}
+```
+
+<div style="text-align:center; font-size:0.8em;">모범답안</div>
+
+<br>
+<br>
+
+|**메모리**|**시간**|
+|:--:|:--:|
+|13980 KB|116 ms|
+
+<br>
+<br>
+ 
+
+ArrayList를 사용했다.

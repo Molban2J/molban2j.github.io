@@ -373,53 +373,10 @@ categories:
 
 <br><br><br>
 
-## 코드 / 기능 리뷰
+## 코드 / 기능 
 
-<details>
-<summary class="summary-text">브랜드 등록 ---->접기/펼치기<</summary>
+### 옥션
 
-### 브랜드 등록
-
-![이미지]({{ site.baseurl }}/images/20230528_175653.png)
-
-<div style="text-align:center; font-size:0.8em;">브랜드 관리 창 ux/ui 개선</div>
-
-<br><br>
-
-![이미지]({{ site.baseurl }}/images/20230528_175836.png)
-
-<div style="text-align:center; font-size:0.8em;">브랜드 등록 창 ux/ui 개선</div>
-
-<br><br>
-
-![이미지]({{ site.baseurl }}/images/20230528_175940.png)
-
-<div style="text-align:center; font-size:0.8em;">이미지를 선택하면 미리보기 적용. 이미지 창을 클릭해서 등록할 수도 있고, 오른쪽 밑에 버튼으로 등록할 수도 있음. 어느 것으로 하든 서로 같은 이미지 파일을 선택한 것으로 보이게 설정</div>
-
-<br><br>
-
-![이미지]({{ site.baseurl }}/images/20230528_180302.png)
-
-<div style="text-align:center; font-size:0.8em;">다만 등록을 완료하면 저렇게 이미지가 나오지 않는데, 서버를 껐다가 업데이트하고 다시 키면 보인다. 원인을 모르겠다...</div>
-
-<br><br>
-
-![이미지]({{ site.baseurl }}/images/20230528_180614.png)
-
-<div style="text-align:center; font-size:0.8em;">브랜드 삭제 창 ux/ui 개선. 마우스 호버시 버튼이 보임</div>
-
-<br><br>
-
-![이미지]({{ site.baseurl }}/images/20230528_180712.png)
-
-<div style="text-align:center; font-size:0.8em;">회원 관리 창 ux/ui 개선. 페이징 적용과 검색기능 추가</div>
-
-</details>
-
----
-
-<details>
-<summary class="summary-text">옥션 ---->접기/펼치기<</summary>
 
 ![이미지]({{ site.baseurl }}/images/20230528_180930.png)
 
